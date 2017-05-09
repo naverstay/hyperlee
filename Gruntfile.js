@@ -49,22 +49,22 @@ module.exports = function (grunt) {
             }
         },
         pug: {
-            debug: {
-                options: {
-                    data: {
-                        client: false,
-                        debug: true,
-                        pretty: true
-                    }
-                },
-                files: [{
-                    cwd: "jade/",
-                    src: "*.jade",
-                    dest: "",
-                    expand: true,
-                    ext: ".html"
-                }]
-            },
+            // debug: {
+            //     options: {
+            //         data: {
+            //             client: false,
+            //             debug: true,
+            //             pretty: true
+            //         }
+            //     },
+            //     files: [{
+            //         cwd: "jade/",
+            //         src: "*.jade",
+            //         dest: "",
+            //         expand: true,
+            //         ext: ".html"
+            //     }]
+            // },
             release: {
                 options: {
                     data: {

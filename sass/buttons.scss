@@ -74,7 +74,26 @@
       padding: 0 15px;
     }
   }
+}
 
+.btn_v4 {
+  height: 40px;
+
+  &.server_btn {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 190px;
+    width: 100%;
+    padding: 10px 5px;
+    font: 14px/20px $RALEWAYSEMIBOLD;
+    text-align: center;
+    border-radius: 20px;
+
+    @include respond-to-min($resp_step_2) {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
 }
 
 .val_btn {

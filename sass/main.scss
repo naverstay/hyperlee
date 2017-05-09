@@ -130,6 +130,10 @@ body {
 
 .tab_unit {
   display: none;
+
+  .tab_unit_v2 & {
+    padding: 40px 0;
+  }
 }
 
 .calendar_title {
@@ -1564,6 +1568,203 @@ body {
 
   li {
     margin: 12px 0 16px;
+  }
+}
+
+.price_block {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.tabs_v2 {
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: -1px;
+
+    &.ui-tabs-active {
+      .menu_link {
+        border-color: #e8e8e8;
+        border-bottom-color: #fff;
+      }
+    }
+  }
+
+  .menu_link {
+    border: 1px solid transparent;
+    display: block;
+    font: 30px $RALEWAYLIGHT;
+    padding: 10px 30px;
+
+    @include respond-to-min($resp_step_2) {
+      font-size: 50px;
+      padding: 8px 42px;
+    }
+  }
+}
+
+.price_list {
+  padding: 20px 0;
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+}
+
+.server_unit {
+  @extend %clearfix;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  padding: 10px 10px 1px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, .08);
+
+  > div {
+    float: left;
+    text-align: center;
+  }
+
+  .server_power {
+    width: 50%;
+    margin-bottom: 19px;
+  }
+
+  .server_ram {
+    width: 50%;
+    margin-bottom: 19px;
+  }
+
+  .server_hdd {
+    width: 50%;
+    margin-bottom: 19px;
+  }
+
+  .server_cpu {
+    width: 50%;
+    margin-bottom: 19px;
+  }
+
+  .server_price {
+    width: 50%;
+    margin-bottom: 19px;
+  }
+
+  .server_control {
+    width: 50%;
+    margin-bottom: 19px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 20px 10px 1px;
+
+    .server_power {
+      width: 33%;
+    }
+
+    .server_ram {
+      width: 33%;
+    }
+
+    .server_hdd {
+      width: 34%;
+    }
+
+    .server_cpu {
+      width: 33%;
+    }
+
+    .server_price {
+      width: 33%;
+    }
+
+    .server_control {
+      width: 34%;
+    }
+  }
+
+  @include respond-to-min($resp_step_3) {
+    padding: 29px 20px 1px;
+
+    .server_power {
+      margin-top: -5px;
+      width: 10%;
+    }
+
+    .server_ram {
+      width: 19.5%;
+    }
+
+    .server_hdd {
+      width: 15%;
+    }
+
+    .server_cpu {
+      width: 15%;
+    }
+
+    .server_price {
+      width: 20%;
+    }
+
+    .server_control {
+      width: 20%;
+      padding-top: 10px;
+    }
+  }
+}
+
+.server_power {
+  position: relative;
+  width: 69px;
+  height: 51px;
+}
+
+.power_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../i/brain.png) no-repeat 50% 100%;
+}
+
+.power_val {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: url(../i/brain_red.png) no-repeat 50% 100%;
+
+  ._splash & {
+    background: url(../i/brain_splash.png) no-repeat 50% 100%;
+  }
+}
+
+.server_ram {
+
+}
+
+.server_u_label {
+  font-size: 13px;
+  color: rgba(0, 0, 0, .5);
+  margin-bottom: 10px;
+}
+
+.server_u_val {
+  color: #020202;
+  font-size: 22px;
+
+  &._price {
+    color: #f23927;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    font-size: 34px;
   }
 }
 

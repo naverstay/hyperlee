@@ -12,7 +12,227 @@ html(lang='ru')
                     .section_inner.clearfix
                         .page_title.text_center
                             p Именно то, что тебе нужно!
-                            
                         
+                        .price_block
+                            ul#price_tabs.tabs_v2
+                                li: a.menu_link(href='#price_tab_1')
+                                    span.link_text CPU
+                                li: a.menu_link(href='#price_tab_2')
+                                    span.link_text GPU
+    
+                            .tabBlock.tab_unit_v2(data-tab-context="#price_tabs")
+                                #price_tab_1.tab_unit
+                                    .text_center
+                                        label.dot_switcher
+                                            input.hide(type='checkbox')
+                                            span.switch_on Час
+                                            span.switch_off Месяц
+                                    
+                                    .price_list
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 0;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 0,512
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 1
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 20
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 0,47
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 12.5%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 1
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 1
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 30
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 0,90
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 25%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 2
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 2
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 40
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 1,69
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 37.5%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 4
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 2
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 60
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 3,31
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 50%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 8
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 4
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 80
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 6,40
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 62.5%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 16
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 8
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 160
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 12,81
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 75%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 32
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 12
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 320
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 21,60
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 87.5%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 48
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 16
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 480
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 30,40
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power
+                                                .power_bg
+                                                .power_val(style='height: 100%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 64
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 20
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 640
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 39,19
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                        .server_unit
+                                            .server_power._splash
+                                                .power_bg
+                                                .power_val(style='height: 100%;')
+                                            .server_ram
+                                                .server_u_label Оперативная память (Gb)
+                                                .server_u_val 128
+                                            .server_hdd
+                                                .server_u_label Память (GB)
+                                                .server_u_val 32
+                                            .server_cpu
+                                                .server_u_label Кол-во ядер
+                                                .server_u_val 1280
+                                            .server_price
+                                                .server_u_label Стоимость
+                                                .server_u_val._price.fw_b 70,40
+                                            .server_control
+                                                a.btn_v4.green_btn.server_btn(href='#')
+                                                    span Начать работать
+                                                    
+                                            
+                                #price_tab_2.tab_unit
+                                    
+                                
+                               
                                 
             +footer()
