@@ -1,0 +1,91 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee land')
+
+    body
+        .wrapper.no_banner
+            .base
+                +header_2(2)
+                
+                .main_content
+                    .section_inner.clearfix
+                        .page_title.text_center
+                            p Вычислительные мощности
+                            p: span для тех, кто меняет мир
+                            
+                            
+                        .join_promo
+                            .join_img
+                                img(src='i/quick.png')
+                                
+                        .join_bonus
+                            .bonus_caption Зарегистрируйся прямо сейчас <br>
+                                b и получи на счёт 500 рублей.
+                            
+                            .join_form.clearfix
+                                form.sendMailForm(action='contact.php')
+                                    .form_row._cell_v4
+                                        .form_cell
+                                            input.input_v3.f_input(name='join_email' required placeholder='Ваш е-мейл')
+                                        .form_cell
+                                            button.btn_v3.green_btn.join_btn
+                                                span Начать работать
+
+                                    .serverAnswer
+                                
+                                ul.join_features
+                                    li Лучшие CPU и GPU конфигурации для машинного обучения и больших данных от 47 копеек в час
+                                    li Начни бесплатно работать прямо сейчас.
+                                ul.join_features
+                                    li Поминутная тарификация. 
+                                    li Можно в любой момент поставить машину на паузу и не платить за нее
+                                    
+                    .section_inner.clearfix
+                        ul.benefits_list
+                            li
+                                .benefit_item
+                                    .benefit_img
+                                        img(src='i/logos.png')
+                                    p Установлены самые популярные&nbsp;библиотеки
+                            li
+                                .benefit_item
+                                    .benefit_img
+                                        img(src='i/box.png')
+                                    p Бесплатное дисковое пространство для хранения рабочих файлов 
+
+                            li
+                                .benefit_item
+                                    .benefit_img
+                                        img(src='i/cpu.png')
+                                    p Лучшие  CPU и GPU конфигурации для машинного обучения по самым доступным ценам
+
+                            li
+                                .benefit_item
+                                    .benefit_img
+                                        img(src='i/support.png')
+                                    p Самая дружелюбная и&nbsp;компетентная поддержка
+
+                    .section_inner.clearfix
+                        .join_form.clearfix
+                            .fz_35.fw_b.text_center.form_caption Можно попробовать бесплатно
+                                
+                            .form_wrapper
+                                form.sendMailForm(action='contact.php')
+                                    .form_row._cell_v4
+                                        .form_cell
+                                            input.input_v3.f_input(name='join_email' required placeholder='Ваш е-мейл')
+                                        .form_cell
+                                            button.btn_v3.green_btn.join_btn
+                                                span Начать работать
+    
+                                    .serverAnswer
+                                        
+                                ul.join_features
+                                    li Начни бесплатно работать прямо сейчас. 
+                                    li Можно в любой момент поставить машину на паузу и не платить за нее   
+                                ul.join_features
+                                    li Поминутная тарификация. 
+                                    li CPU и GPU конфигурации от 47 копеек в час
+                                
+            +footer()

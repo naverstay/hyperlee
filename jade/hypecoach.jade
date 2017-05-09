@@ -1,0 +1,59 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee тарифы')
+
+    body
+        .wrapper
+            .base
+                +header(2)
+                
+                .main_content
+                    .section_inner.clearfix
+                        .section_caption.text_center
+                            p: b Добро пожаловать в мир машинного обучения!
+                            p: span Вычислительные и интеллектуальные ресурсы <br> для машинного обучения. 
+
+                        .coach_block
+                            .coach_features
+                                p Я: 
+                                ul.features_list
+                                    li — Дружелюбный 
+                                    li — Терпимый 
+                                    li — Люблю и знаю то, что делаю 
+                                    
+                            .coach_photo
+                                img(src='i/coach.png')
+                                
+                        .coach_info
+                            p Есть вопросы по математической части? <br> Не знаешь с чего начать? <br> Не знаешь, как подступиться к решению конкретной задачи? Вопросы с Python?
+                            p Все расскажем и покажем прямо сейчас в формате чата или видео звонка. 
+                                
+                            p 
+                                | Стоимость 
+                                span.offer_price
+                                    span.clr 850 
+                                    span._rub  &#x413;
+                                |  в час.
+                                
+                    .section_inner.clearfix
+                        .coach_form
+                            form.sendMailForm(action='contact.php')
+                                .form_row._cell_v3
+                                    .form_cell
+                                        input.input_v2.f_input(name='coach_email' required placeholder='Ваш е-мейл')
+                                    .form_cell
+                                        button.btn_v1.green_btn.offer_btn Отправить заявку
+
+                                .serverAnswer
+
+
+                    .section.section_v2
+                        .section_inner
+                            .individual_offer
+                                p
+                                    | Позвоните  
+                                    a.fw_b.clr_green(href='tel:+74951033040')  +7 495 103-30-40 
+                                    | и согласуйте  <br> индивидуальный формат консультации для вас или вашей компании
+                                
+            +footer()

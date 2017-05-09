@@ -1,0 +1,396 @@
+//*************************** header
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  //border-top: 2px solid #191919;
+  border-bottom: 1px solid #e3e3e3;
+
+  > .section_inner {
+    padding: 20px 12px 16px;
+
+    @include respond-to-min($resp_step_2) {
+      padding: 40px 12px 16px;
+    }
+  }
+
+  &.header_v2 {
+    border-top: 2px solid #191919;
+
+    > .section_inner {
+
+      @include respond-to-min($resp_step_2) {
+        padding: 30px 12px 23px;
+      }
+    }
+  }
+}
+
+.banner {
+  padding: 21px 0 15px;
+  border-bottom: 1px solid #191919;
+  background: #60cc69;
+  font: 16px/1.2 $RALEWAYSEMIBOLD;
+  letter-spacing: .02em;
+}
+
+.logo_block {
+  max-width: 80%;
+
+  @include respond-to-min($resp_step_2) {
+    float: left;
+  }
+}
+
+.logo {
+  //@extend %clearfix;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-top: 2px;
+  font: 30px/42px $KIYESANS;
+  color: $default_t_color;
+  letter-spacing: 0.015em;
+
+  span {
+    float: left;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    font-size: 37px;
+  }
+
+  .header_v2 & {
+    padding-left: 55px;
+
+    span:after,
+    span:before,
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      border-radius: 2px;
+      width: 13px;
+      height: 10px;
+      background: #60cc69;
+    }
+
+    &:after {
+      top: 4px;
+      left: 17px;
+    }
+
+    &:before {
+      left: 3px;
+      top: 15px;
+    }
+
+    span {
+      &:after {
+        top: 26px;
+        left: 17px;
+      }
+
+      &:before {
+        top: 15px;
+        left: 31px;
+      }
+    }
+  }
+}
+
+.beta {
+  font: 14px/16px $RALEWAYBOLD;
+  padding: 2px 0 0 6px;
+  color: #f43927;
+  letter-spacing: -0.05em;
+  display: none;
+}
+
+.store {
+  color: #fff;
+  background: #f43927;
+  text-align: center;
+  font: 11px/23px $RALEWAYBOLD;
+  padding: 2px 5px;
+  float: left;
+  clear: both;
+
+  @include respond-to-min($resp_step_2) {
+    font-size: 13px;
+  }
+}
+
+.mob_menu_btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  top: 10px;
+  z-index: 6;
+
+  &:after {
+    height: 2px;
+    background: #3a3a3a;
+    margin-top: -1px;
+  }
+
+  &:before {
+    border: solid #3a3a3a;
+    border-width: 2px 0;
+    margin-top: -6px;
+    height: 12px;
+  }
+
+  &:after,
+  &:before {
+    @include transition_all(transform .3s);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+    transform-origin: 50% 50%;
+  }
+
+  .menu_opened & {
+    right: 2px;
+    top: 2px;
+
+    &:after,
+    &:before {
+      border: none;
+      height: 2px;
+      right: 3px;
+      left: 3px;
+      margin-top: -2px;
+      background: #3a3a3a;
+    }
+
+    &:after {
+      @include transform_rotate_no_check(-45);
+    }
+
+    &:before {
+      @include transform_rotate_no_check(45);
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    display: none;
+  }
+}
+
+.best_offers {
+  float: left;
+  padding: 5px 42px;
+  letter-spacing: .01em;
+  font: 19px/26px $RALEWAYBOLD;
+}
+
+.lang_switcher {
+  position: relative;
+  float: left;
+  margin: -6px 0;
+  //padding-left: 60px;
+}
+
+.lang_menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -3px;
+  z-index: 1;
+  background: #fff;
+  border-radius: 13px;
+  text-align: left;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+
+  li {
+    padding: 3px;
+  }
+
+  ._opened & {
+    display: block;
+  }
+}
+
+.lang_link {
+  display: block;
+
+  img {
+    display: block;
+  }
+}
+
+.cur_lang {
+  position: relative;
+  padding-right: 26px;
+
+  &:before {
+    @include transition_all(transform .3s);
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 6px;
+    right: 8px;
+    top: 12px;
+    background: url(../i/drop_down.png) no-repeat 0 0;
+  }
+
+  ._opened & {
+    &:before {
+      @include transform_rotate(180);
+    }
+  }
+}
+
+.callback_block {
+  float: right;
+}
+
+// *********  menu
+
+.main_menu_holder {
+  text-align: center;
+  @include transition_all(transform .3s);
+
+  @include respond-to-max($resp_step_2) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    padding: 50px 0;
+    bottom: 0;
+    z-index: 5;
+    background: #fff;
+    -webkit-transform: translate(310px, 0);
+    -ms-transform: translate(310px, 0);
+    transform: translate(310px, 0);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+
+    .menu_link {
+      display: block;
+      padding: 20px 0;
+    }
+
+    .menu_opened & {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-right: 180px;
+  }
+}
+
+.link_text {
+  display: inline-block;
+  vertical-align: middle;
+
+  &.hype_coach {
+    font: 24px/1 $KIYESANS;
+  }
+}
+
+.link_icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -35px 0 -10px;
+
+  img {
+    display: block;
+  }
+}
+
+.menu_item {
+
+  @include respond-to-min($resp_step_2) {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 48px;
+    padding-top: 10px;
+    line-height: 40px;
+
+    .header_v2 & {
+      padding-top: 2px;
+    }
+  }
+}
+
+.menu_link {
+  @include transition_all(color .3s);
+  cursor: pointer;
+  text-decoration: none;
+  color: $default_t_color;
+  font: 16px $RALEWAYMEDIUM;
+  letter-spacing: -.01em;
+
+  &:hover {
+    color: #6ab962;
+  }
+
+  .ui-state-active &,
+  ._active & {
+    cursor: default;
+    color: #6ab962;
+  }
+}
+
+.header_contacts {
+  font: 18px $RALEWAYBOLD;
+  //padding-top: 8px;
+  text-align: right;
+  display: none;
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $default_t_color;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: right;
+    display: block;
+  }
+}
+
+.auth_menu {
+  font: 14px $RALEWAYMEDIUM;
+  //padding-top: 8px;
+  text-align: right;
+  display: none;
+
+  > li {
+
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: right;
+    display: block;
+
+    > li {
+      float: left;
+      padding-top: 15px;
+      padding-left: 36px;
+    }
+  }
+}
+
+.phone_code {
+  color: #b4b4b4;
+}
+
+.auth_link {
+  text-decoration: none;
+  color: $default_t_color;
+}

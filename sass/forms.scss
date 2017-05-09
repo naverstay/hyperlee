@@ -1,0 +1,287 @@
+.check_v1 {
+  cursor: pointer;
+  display: block;
+
+  .check_text {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      margin-top: -9px;
+      border: 1px solid #e3e3e3;
+      background: #fff;
+    }
+  }
+
+  input:checked ~ .check_text {
+    &:before {
+      background: #fff url(../i/check.png) 50% 50% no-repeat;
+    }
+  }
+}
+
+.check_v2 {
+  cursor: pointer;
+  display: block;
+
+  .check_text {
+    display: block;
+    position: relative;
+    padding-left: 42px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      margin-top: -12px;
+      border: 1px solid #e3e3e3;
+      background: #fff;
+    }
+  }
+
+  input:checked ~ .check_text {
+    &:before {
+      background: #fff url(../i/check.png) 50% 50% no-repeat;
+    }
+  }
+}
+
+.radio_v1 {
+  cursor: pointer;
+  display: block;
+
+  .check_text {
+    display: block;
+    position: relative;
+    padding-left: 42px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      border-radius: 100%;
+    }
+
+    &:before {
+      left: -4px;
+      width: 28px;
+      height: 28px;
+      margin-top: -14px;
+      border: 2px solid #dcdcdc;
+      background: #fff;
+    }
+
+    &:after {
+      @include transition_all(opacity .3s);
+      left: 1px;
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      background: #60cc69;
+      opacity: 0;
+    }
+  }
+
+  input:checked ~ .check_text {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.form_row {
+  @extend %clearfix;
+  position: relative;
+
+  &._cell_v2 {
+    @include respond-to-min($resp_step_2) {
+      margin-left: -72px;
+
+      .form_cell {
+        float: left;
+        width: 50%;
+        padding-left: 72px;
+      }
+    }
+  }
+
+  &._cell_v3 {
+    @include respond-to-min($resp_step_2) {
+      margin-left: -28px;
+
+      .form_cell {
+        float: left;
+        width: 50%;
+        padding-left: 28px;
+      }
+    }
+  }
+
+  &._cell_v4 {
+
+    .form_cell {
+      margin-bottom: 30px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+
+      .form_cell {
+        float: left;
+        width: 41%;
+
+        &:first-child {
+          margin-right: -10%;
+          width: 69%;
+
+          .f_input {
+            padding-right: 12%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.subscribe_input {
+  margin-bottom: 20px;
+
+  @include respond-to-min($resp_step_2) {
+    input {
+      padding-right: 185px;
+    }
+  }
+}
+
+.subscribe_btn {
+  margin-top: 20px;
+
+  @include respond-to-min($resp_step_2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    width: 175px;
+
+    .btn_v2.subscribe_btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.input_w {
+  position: relative;
+}
+
+.f_label {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 5px;
+}
+
+.f_input {
+  display: block;
+  width: 100%;
+}
+
+.input_v1 {
+  height: 47px;
+  padding: 10px 28px;
+  font-size: 14px;
+  line-height: 27px;
+  border-radius: 30px;
+  border: 1px solid #e3e3e3;
+  background: #fff;
+
+  &._counter {
+    text-align: center;
+    padding: 10px 50px;
+  }
+}
+
+.input_v2 {
+  height: 60px;
+  padding: 10px 0;
+  font: 16px/20px $RALEWAYSEMIBOLD;
+  border-bottom: 2px solid #191919;
+  background: #fff;
+}
+
+textarea.input_v2 {
+  height: 110px;
+}
+
+.input_v3 {
+  height: 50px;
+  padding: 10px 19px;
+  border-radius: 3px;
+  border: 1px solid #e2e6e2;
+  background: #fff;
+  font: 16px/28px $RALEWAYSEMIBOLD;
+}
+
+.form_title {
+  font: 30px $RALEWAYBOLD;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form_caption {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  @include respond-to-min($resp_step_2) {
+    margin-top: 30px;
+    margin-bottom: 38px;
+  }
+}
+
+.form_inner {
+  max-width: 540px;
+  padding: 10px 10px 45px;
+  margin: auto;
+  background: #fff;
+
+  .offer_control {
+    padding: 20px 0;
+  }
+
+  .btn_v1.offer_btn {
+    min-width: 234px;
+  }
+
+  .form_cell {
+    margin-bottom: 16px;
+  }
+}
+
+.form_cell {
+
+  &._mod_check {
+    margin: 40px 0 1px;
+  }
+
+  &._mod_check_2 {
+    margin: 23px 0 0;
+
+    .check_text {
+      color: #8c8c8c;
+    }
+  }
+
+  ._cell_v5 & {
+    margin-bottom: 10px;
+  }
+}

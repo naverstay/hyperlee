@@ -1,0 +1,34 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee login')
+
+    body
+        .wrapper.no_banner
+            .base
+                +header_2(2, true)
+                
+                .main_content
+                    .section_inner.clearfix
+                        .login_form.clearfix
+                            .form_wrapper._cell_v5
+                                .login_caption Вход
+                                form.sendMailForm(action='contact.php')
+                                    .form_cell
+                                        input.input_v3.f_input(name='login_email' required placeholder='Логин')
+                                    .form_cell: .input_w
+                                        input.input_v3.f_input(name='login_email' required placeholder='Пароль')
+                                        .reminder_block
+                                            a.reminder_link(href='#') Забыли?
+                                            
+                                    .form_cell._mod_check_2
+                                        label.check_v2
+                                            input.hide(type='checkbox')
+                                            span.check_text.fw_sb Запомнить меня
+                                        
+                                    .form_cell.text_center
+                                        button.btn_v1.green_btn.offer_btn Войти
+
+                                    .serverAnswer
+                                
+            +footer()

@@ -1,0 +1,25 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee register')
+
+    body
+        .wrapper.no_banner
+            .base
+                +header_2(2, true)
+                
+                .main_content
+                    .section_inner.clearfix
+                        .login_form.clearfix
+                            .form_wrapper._cell_v5
+                                .login_caption Регистрация
+                                form.sendMailForm(action='contact.php')
+                                    .form_cell
+                                        input.input_v3.f_input(name='login_email' required placeholder='Введите вашу почту')
+                                        
+                                    .form_cell.text_center
+                                        button.btn_v1.green_btn.offer_btn Зарегистрироваться
+
+                                    .serverAnswer
+                                
+            +footer()

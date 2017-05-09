@@ -1,0 +1,76 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee тарифы')
+
+    body
+        .wrapper
+            .base
+                +header(3)
+                
+                .main_content
+                    .section_inner
+                        .section_caption.text_center 
+                            span Наши тарифы
+                            
+                        .offer_list_holder: ul.offer_list
+                            li
+                                input.hide(type='checkbox')
+                                .tariff_unit: .unit_inner
+                                    .offer_img
+                                        img(src='i/cloud.png')
+                                    .offer_name 
+                                        span Hyperlee
+                                        span.fw_b One
+                                        
+                                    .offer_tip Виртуальный рабочий стол, <br> хранение данных, 1с в облаке
+
+                                    .offer_price 
+                                        span 83-1016
+                                        span._rub  &#x413;
+                                    .offer_tip
+                                        span.fz_16 в день
+                                            
+                            li
+                                input.hide(type='checkbox')
+                                .tariff_unit._main: .unit_inner
+                                    .offer_img
+                                        img(src='i/settings.png')
+                                    .offer_name 
+                                        span Hyperlee
+                                        span.fw_b  X, XL, XXL
+                                        
+                                    .offer_tip Deep learning, машинное обучение, data science. <br> Карты Nvidia GTX 1060, Nvidia GTX 1080, Nvidia Titan X Pascal
+
+                                    .offer_price 
+                                        span 300-850
+                                        span._rub  &#x413;
+                                    .offer_tip
+                                        span.fz_16 в день
+                                            
+                            li
+                                input.hide(type='checkbox')
+                                .tariff_unit: .unit_inner
+                                    .offer_img
+                                        img(src='i/rocket.png')
+                                    .offer_name 
+                                        span Hyperlee
+                                        span.fw_b Atom
+                                        
+                                    .offer_tip Высокопроизводительные вычисления. <br> Работа с графикой, видео. Рендеринг
+
+                                    .offer_price 
+                                        span 400-900
+                                        span._rub  &#x413;
+                                    .offer_tip
+                                        span.fz_16 в день
+                    .section.section_v2
+                        .section_inner
+                            .individual_offer
+                                p
+                                    | Наберите 
+                                    a.fw_b.clr_green(href='tel:+74951033040')  +7 495 103-30-40 
+                                    | <br> и наш специалист поможет вам подобрать сервер по лучшей цене
+                            
+
+            +footer()

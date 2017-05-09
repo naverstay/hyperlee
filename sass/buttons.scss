@@ -1,0 +1,147 @@
+//************  buttons
+
+.btn_v1 {
+  height: 60px;
+
+  &.offer_btn {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 30px;
+    padding: 13px 30px;
+    font: 22px/30px $RALEWAYSEMIBOLD;
+    text-align: center;
+
+    @include respond-to-max($resp_step_1) {
+      padding: 15px;
+    }
+  }
+
+  &.login_btn {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 25px;
+    padding: 0 25px;
+    font: 22px/50px $RALEWAYSEMIBOLD;
+    text-align: center;
+    margin-top: 30px;
+    width: 270px;
+    max-width: 100%;
+
+    span {
+      display: inline-block;
+      line-height: normal;
+    }
+
+    @include respond-to-max($resp_step_3 + 200) {
+      font-size: 18px;
+      padding: 0 15px;
+    }
+  }
+}
+
+.btn_v2 {
+  height: 47px;
+
+  &.subscribe_btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font: 16px/23px $RALEWAYSEMIBOLD;
+    text-align: center;
+    border-radius: 30px;
+  }
+}
+
+.btn_v3 {
+  height: 50px;
+
+  &.join_btn {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+    padding: 0 25px;
+    font: 22px/50px $RALEWAYSEMIBOLD;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      line-height: normal;
+    }
+
+    @include respond-to-max($resp_step_3 + 200) {
+      font-size: 18px;
+      padding: 0 15px;
+    }
+  }
+
+}
+
+.val_btn {
+  @include transition_all(border-color .3s);
+  @extend %no-user-select;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 45px;
+  font-size: 30px;
+  line-height: 43px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  z-index: 1;
+
+  &:hover {
+    border-color: #e3e3e3;
+  }
+
+  &.minus {
+    left: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+
+  &.plus {
+    right: 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  &.disabled {
+    cursor: default;
+    background: none;
+    color: #a0a0a0;
+  }
+}
+
+.green_btn {
+  @include transition_all(background .3s);
+  color: #fff;
+  background: #60cc69;
+  border-bottom: 4px solid #489f50;
+
+  &:hover {
+    background: #489f50;
+  }
+}
+
+.white_green_btn {
+  @include transition_all(background .3s, color .3s);
+  color: #60cc69;
+  background: #fff;
+  border: 2px solid #60cc69;
+
+  &:hover {
+    background: #60cc69;
+    color: #fff;
+  }
+}
+
+.btn_red {
+  color: #fff;
+  background: #f46b65;
+}
+
+._w_100 {
+  width: 100%;
+}

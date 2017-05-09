@@ -1,0 +1,642 @@
+- var dev = true;
+
+mixin dev_head(page_title)
+    head
+        title=page_title
+        | 
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="format-detection", content="telephone=no")
+        link(rel='stylesheet', href='styles/main_global.css?no_cache', media='all')
+        - if (dev)
+            script(src='js/jquery1.10.js?no_cache')
+            script(src='js/inputmask.bundle.js?no_cache')
+            script(src='js/jquery-ui-1.11.4.js?no_cache')
+            script(src='js/script.js?no_cache')
+        - else
+            script(src='js/min/all.js?no_cache')
+
+mixin loop_while(counter)
+    -i=0;
+    while i < counter
+        -i++;
+        block
+       
+mixin header(active)
+    div.header
+        .banner
+            .section_inner.text_center.clr_white
+                p Вопросы по машинному обучению?  
+                    a.gl_link.clr_white(href='hypecoach.html') Ответы здесь 
+
+        .section_inner.clearfix
+            .logo_block
+                a.logo(href='index.html')
+                    span hyperlee.com
+                    span.beta beta
+                    .store Магазин вычислительных ресурсов
+
+            //-.best_offers Лучшие предложения дата-центров <br> России в одном месте
+            .header_contacts
+                p 
+                    a(href='tel:74951033040')
+                        span.phone_code +7 495 
+                        b.fw_b 103-30-40
+                p
+                    a.f_contact(href='http://t.me/hyperlee')
+                        span.f_contact_icon
+                            img(src='i/telegram.png')
+                        span @hyperlee
+
+            a.mob_menu_btn.menuBtn(href='#')
+                
+            .main_menu_holder: ul.main_menu
+                li.menu_item(class= active == 1 ? '_active' : '')
+                    a.menu_link(href='study.html')
+                        span.link_text Машинное обучение
+                li.menu_item(class= active == 2 ? '_active' : '')
+                    a.menu_link(href='hypecoach.html')
+                        span.link_icon
+                            img(src='i/coach_icon.png')
+                        span.link_text.hype_coach hypeCoach
+                li.menu_item(class= active == 3 ? '_active' : '')
+                    a.menu_link(href='tariffs.html')
+                        span.link_text Тарифы
+                li.menu_item(class= active == 4 ? '_active' : '')
+                    a.menu_link(href='how.html')
+                        span.link_text Как это работает
+
+mixin header_2(active, no_auth)
+    div.header.header_v2
+        //-.banner
+            .section_inner.text_center.clr_white
+                p Вопросы по машинному обучению?  
+                    a.gl_link.clr_white(href='hypecoach.html') Ответы здесь 
+
+        .section_inner.clearfix
+            .logo_block
+                a.logo(href='index.html')
+                    span hyperlee
+                    
+            - if (no_auth)
+                ul.auth_menu
+                    li: a.auth_link(href='reg.html') Ещё не зарегистрированы?
+                    li: a.auth_link(href='reg.html') Регистрация
+                    li
+                        .lang_switcher
+                            .cur_lang.curLang
+                                img(src='i/lang_ru.png')
+                            ul.lang_menu.langMenu
+                                li: a.lang_link.langLink(href='#'): img(src='i/lang_ru.png')
+                                li: a.lang_link.langLink(href='#'): img(src='i/lang_ru.png')
+    
+            - else
+                ul.auth_menu
+                    li: a.auth_link(href='reg.html') Регистрация
+                    li: a.auth_link(href='reg.html') Войти
+                    li
+                        .lang_switcher
+                            .cur_lang.curLang
+                                img(src='i/lang_ru.png')
+                            ul.lang_menu.langMenu
+                                li: a.lang_link.langLink(href='#'): img(src='i/lang_ru.png')
+                                li: a.lang_link.langLink(href='#'): img(src='i/lang_ru.png')
+                    
+    
+                a.mob_menu_btn.menuBtn(href='#')
+                    
+                .main_menu_holder: ul.main_menu
+                    li.menu_item(class= active == 1 ? '_active' : '')
+                        a.menu_link(href='how.html')
+                            span.link_text Как это работает
+                    li.menu_item(class= active == 3 ? '_active' : '')
+                        a.menu_link(href='price.html')
+                            span.link_text Ресурсы и цены
+                    li.menu_item(class= active == 4 ? '_active' : '')
+                        a.menu_link(href='study.html')
+                            span.link_text Для студентов
+
+mixin footer()
+    .footer
+        .section_inner
+            ul.footer_contacts
+                li.fz_16
+                    a.f_contact(href='tel:+74951033040')
+                        span.f_contact_icon
+                            img(src='i/phone.png')
+                        span +7 495 103-30-40
+                    
+                    a.f_contact(href='https://telegram.me/@hyperlee')
+                        span.f_contact_icon
+                            //-img(src='i/phone.png')
+                        span @hyperlee
+
+                li
+                    .f_contact
+                        span.f_contact_icon
+                            img(src='i/pin.png')
+                        span Москва, Большой Каретный пер, дом 20, стр. 3 офис 14
+            
+                li.fz_16
+                    a.f_contact(href='mailto:moscow@hyperlee.com')
+                        span.f_contact_icon
+                            img(src='i/envelope.png')
+                        span moscow@hyperlee.com
+                        
+                li
+                    ul.so_sh
+                        li: a.sh_link.sh_link_5(href='https://vk.com/hyperlee')
+                        li: a.sh_link.sh_link_1(href='https://www.facebook.com/hyperleestore/')
+                        //-li: a.sh_link.sh_link_2(href='#')
+                        //-li: a.sh_link.sh_link_3(href='#')
+                        //-li: a.sh_link.sh_link_4(href='#')
+                        
+    #order_form.popup_form( style='display:none;'): form.sendMailForm(action='contact.php' method="POST")
+        .form_inner
+            .form_title Заявка
+                
+            .form_cell
+                input.f_input.input_v2(required placeholder='Как вас зовут?' name='order_name')
+            
+            .form_cell
+                input.f_input.input_v2(required placeholder='ВУЗ' name='order_university')
+                
+            .form_row._cell_v2
+                .form_cell
+                    input.f_input.input_v2(required placeholder='Телефон' name='order_phone')
+                
+                .form_cell
+                    input.f_input.input_v2(required placeholder='Е-мейл' name='order_email')
+            
+            ul.offer_control
+                li.text_center
+                    button.btn_v1.green_btn.offer_btn
+                        span.fw_b Отправить
+                        
+            .serverAnswer
+                                    
+    #order_form_2.popup_form( style='display:none;'): form.sendMailForm(action='contact.php' method="POST")
+        input.hide.orderInfo(name='order_info')
+        input.hide.orderDays(name='order_days')
+        input.hide.serverCount(name='server_count')
+        input.hide.orderCount(name='order_count')
+        .form_inner
+            .form_title Заявка
+                
+            .form_cell
+                input.f_input.input_v2(required placeholder='Как вас зовут?' name='order_name')
+            
+            .form_cell
+                input.f_input.input_v2(required placeholder='Телефон или почта' name='order_phone_email')
+                
+            .form_cell
+                input.f_input.input_v2(required placeholder='Название компании' name='order_company')
+            
+            .form_cell
+                textarea.f_input.input_v2(required placeholder='Комментарий' name='order_comment')
+                
+            .form_cell._mod_check
+                label.check_v2
+                    input.hide(type='checkbox')
+                    span.check_text.fw_sb Включить 1 час консультации со специалистом hypeCoach.   
+                        | 850 
+                        span._rub  &#x413;
+
+            ul.offer_control
+                li.text_center
+                    button.btn_v1.green_btn.offer_btn
+                        span.fw_b Отправить
+                        
+            .serverAnswer
+
+mixin comparason(val)
+    .comparison_scale
+        .comparason_rate(style='width:' + val + '%;')
+            .comparason_val= val
+            
+mixin study(callback)
+    .section_inner
+        ul#study_tabs.link_list.text_center
+            li(data-clone='1'): a.menu_link(href='#study_tab_1')
+                span.link_text Тарифы
+            li(data-clone='2'): a.menu_link(href='#study_tab_2')
+                span.link_text Сравнение карт
+            li(data-clone='3'): a.menu_link(href='#study_tab_3')
+                span.link_text Мероприятия
+            li(data-clone='4'): a.menu_link(href='#study_tab_4')
+                span.link_text Для студентов
+    
+    .tabBlock(data-tab-context="#study_tabs")
+        #study_tab_1.tab_unit
+            .section_inner
+                .offer_list_holder: ul.offer_list
+                    li
+                        input.hide(type='checkbox')
+                        .offer_unit: .unit_inner
+                            .offer_img
+                                img(src='i/icon_x.png')
+                            .offer_name
+                                span Hyperlee
+                                span.fw_b X
+    
+                            .offer_gpu Nvidia GTX 1060
+                            .offer_cpu Intel Core i5 7600K,64 гб ОЗУ,480 гб SSD
+                            .offer_tip Бюджетный вариант. <br> Хорошо подходит для участия в Kaggle
+                            .offer_price
+                                span 300 
+                                span._rub  &#x413;
+                            .offer_tip
+                                span.fz_16 в день
+    
+                            .offer_control
+                                a.btn_v1.green_btn.offer_btn.orderPromo(href='#')
+                                    span.fw_b Подключить 
+                                    span.fz_16  в 2 клика 
+    
+                    li
+                        input.hide(type='checkbox')
+                        .offer_unit._main: .unit_inner
+                            .offer_img
+                                img(src='i/icon_xl.png')
+                            .offer_name
+                                span Hyperlee
+                                span.fw_b XL
+    
+                            .offer_gpu Nvidia GTX 1080
+                            .offer_cpu Intel Core i5 7600K,64 гб ОЗУ,480 гб SSD
+                            .offer_tip Лучшее соотношение цены <br> и качества
+    
+                            .offer_price
+                                span 450 
+                                span._rub  &#x413;
+                            .offer_tip
+                                span.fz_16 в день
+    
+                            .offer_control
+                                a.btn_v1.green_btn.offer_btn.orderPromo(href='#')
+                                    span.fw_b Подключить 
+                                    span.fz_16  в 2 клика 
+    
+                    li
+                        input.hide(type='checkbox')
+                        .offer_unit: .unit_inner
+                            .offer_img
+                                img(src='i/icon_xxl.png')
+                            .offer_name
+                                span Hyperlee
+                                span.fw_b XXL
+    
+                            .offer_gpu Nvidia Titan X Pascal
+                            .offer_cpu Intel Core i5 7600K,64 гб ОЗУ,480 гб SSD
+                            .offer_tip Лучшая карта для машинного <br> обучения
+    
+                            .offer_price
+                                span 850 
+                                span._rub  &#x413;
+                            .offer_tip
+                                span.fz_16 в день
+    
+                            .offer_control
+                                a.btn_v1.green_btn.offer_btn.orderPromo(href='#')
+                                    span.fw_b Подключить 
+                                    span.fz_16  в 2 клика 
+    
+        #study_tab_2
+            .section_inner
+                .comparison_block
+                    ul.comparison_list
+                        li
+                            .comparison_item
+                                .comparison_name: span Titan X Pascal
+                                +comparason(100)
+                        li
+                            .comparison_item
+                                .comparison_name: span GTX 1080
+                                +comparason(70)
+                        li
+                            .comparison_item
+                                .comparison_name: span GTX 1070
+                                +comparason(55)
+                        li
+                            .comparison_item
+                                .comparison_name: span GTX Titan X
+                                +comparason(50)
+                        li
+                            .comparison_item
+                                .comparison_name: span GTX 980 Ti
+                                +comparason(50)
+                        li
+                            .comparison_item
+                                .comparison_name: span GTX 1060
+                                +comparason(40)
+                        li
+                            .comparison_item
+                                .comparison_name: span GTX 980
+                                +comparason(35)
+                        
+                    .comparason_tip Производительность <br> разных типов карт
+                        
+                    
+            - if (callback)
+                .section.section_v2
+                    .section_inner
+                        .individual_offer
+                            p
+                                | Наберите 
+                                a.fw_b.clr_green(href='tel:+74951033040')  +7 495 103-30-40 
+                                | <br> и наш специалист поможет вам подобрать сервер по лучшей цене
+
+        #study_tab_3.tab_unit
+            .section_inner: .calendar_block
+                .calendar_title
+                    h2.fz_45.fw_b Ресурс для твоего будущего
+                    
+                    p Календарь мероприятий, посвященных машинному обучению
+                    
+                //-.calendar_holder
+                    | <iframe src="https://calendar.google.com/calendar/embed?src=ru.ukrainian%23holiday%40group.v.calendar.google.com&ctz=Europe/Kiev" style="border: 0" width="100%" height="780" frameborder="0" scrolling="no"></iframe>
+                    //-img(src='i/calendar.jpg')
+
+
+        #study_tab_4.tab_unit
+            .section_inner: .students_block
+                .students_promo
+                    img(src='i/students.jpg')
+                
+                .students_invite Мы приглашаем активных студентов, интересующихся новыми технологиями и, в частности, машинным обучением стать  частью команды Hyperlee и быть представителем бренда в своем ВУЗе. 
+                    
+                .students_task Задача представителя бренда вовлечь новых студентов в&nbsp;мир&nbsp;Hyperlee и машинного обучения, организация&nbsp;мероприятий и воркшопов в своем ВУЗе. 
+                    
+                ul.offer_control
+                    li.text_center
+                        a.btn_v1.green_btn.offer_btn.orderOpenBtn(href='#')
+                            span.fw_b Отправить заявку
+                            
+
+mixin product_offer()
+    .product_offer
+        .product_offer_table
+            .thead
+                .tr
+                    .td._col_1
+                        .prod_t_caption
+                            span.mb Тариф
+                    .td._col_3.sortCol._sort_asc
+                        .prod_t_caption._sort.sortBtn(data-sort-param='price_day' data-sort='asc')
+                            span.mb
+                                span Цена/день
+                                span.sort_icon
+                    .td._col_2.sortCol
+                        .prod_t_caption._sort.sortBtn.sortLoad(data-sort-param='price_day' data-sort='asc')
+                            span.mb
+                                span Мощности
+                                span.sort_icon
+                    
+            .tbody.prodOffers
+                .tr.prodRow
+                    .td._col_1
+                        .prod_name
+                            label.radio_v1
+                                input.hide.prodCheck(type='radio' name='product')
+                                span.check_text 
+                                    span Hyperlee
+                                    span.fw_b One
+                                    
+                    .td._col_3
+                        .prod_price 
+                            span 100 
+                            span._rub  &#x413;
+                            
+                    .td._col_2
+                        .prod_info
+                            p 1 x Core 2 Duo E8400 3GHz1 x 2048MB DDR22 x 250Gb SATA
+                    
+                .tr.prodRow
+                    .td._col_1
+                        .prod_name
+                            label.radio_v1
+                                input.hide.prodCheck(type='radio' name='product')
+                                span.check_text 
+                                    span Hyperlee
+                                    span.fw_b X
+                    .td._col_3
+                        .prod_price 
+                            span 200 
+                            span._rub  &#x413;
+                                    
+                    .td._col_2
+                        .prod_info
+                            p 1 x Core 2 Duo E8400 3GHz1 x 2048MB DDR22 x 250Gb SATA
+                    
+                .tr.prodRow
+                    .td._col_1
+                        .prod_name
+                            label.radio_v1
+                                input.hide.prodCheck(type='radio' name='product')
+                                span.check_text 
+                                    span Hyperlee
+                                    span.fw_b Atom
+                    .td._col_3
+                        .prod_price 
+                            span 300 
+                            span._rub  &#x413;
+                                    
+                    .td._col_2
+                        .prod_info
+                            p 1 x Core 2 Duo E8400 3GHz1 x 2048MB DDR22 x 250Gb SATA
+    
+    .subscribe_block
+        p Подписаться на лучшие предложения дата-центров
+        
+        .subscribe_form
+            form.sendMailForm(action='contact.php')
+                .form_row
+                    .form_cell.subscribe_input
+                        input.input_v1.f_input(name='subscribe_email' required placeholder='Ваш е-мейл')
+                    .form_cell.subscribe_btn
+                        button.btn_v2.white_green_btn.subscribe_btn Отправить
+                
+                .serverAnswer
+                    
+mixin col_right()
+    .order_block
+        .order_caption Заявка в 2 клика
+        .orderEmpty.order_empty(style='display:none;')
+            span Выберите нужную конфигурацию
+            .order_empty_img
+                img(src='i/arrow-left.png')
+                
+        .orderSettings(style='display:none;')
+            .order_item.orderOptions 1 x Core 2 Duo E8400 3GHz1 x 2048MB DDR2 2 x 250Gb SATA
+                
+            .order_info
+                span.orderPrice 100
+                span  рублей
+                
+            p Подключение после оплаты в&nbsp;течение 15 минут
+            
+            ul.offer_control
+                li.serverCounterControl
+                    .form_cell
+                        label.f_label(for='servers_counter') Количество серверов 
+                        .input_w.valCell
+                            input#servers_counter.input_v1.f_input._counter.cardCounter(value='1' data-min='1' data-max='1000' data-step='1' data-inputmask-regex="[1-9][0-9]*")
+                            .val_btn.minus.valMinus -
+                            .val_btn.plus.valPlus +
+                
+                li
+                    .form_cell
+                        label.f_label(for='days_counter') Количество дней 
+                            span.oneMode(style='display:none;')  (Минимальный срок аренды 30 дней. Бюджет по умолчанию пересчитан на 30 дней)
+                        .input_w.valCell
+                            input#days_counter.input_v1.f_input._counter.cardCounter(value='1' data-min='1' data-max='100000000' data-step='1' data-inputmask-regex="[1-9][0-9]*")
+                            .val_btn.minus.valMinus -
+                            .val_btn.plus.valPlus +
+                                
+                li.partCondition(style='display:none;')
+                    .form_cell
+                        label.f_label(for='card_counter') Количество карт 
+                        .input_w.valCell
+                            input#card_counter.input_v1.f_input._counter.cardCounter(value='1' data-min='1' data-max='5' data-step='1' data-inputmask-regex="[1-5]")
+                            .val_btn.minus.valMinus -
+                            .val_btn.plus.valPlus +
+                
+                li
+                    a.btn_v1.green_btn.offer_btn._w_100.orderOpenBtn2(href='#')
+                        span.fw_b Заказать
+                    
+mixin col_left()
+    .product_settings
+        ul.product_list
+            //-li.prodCat
+                .product_cat.catOpen Тип сервера
+                ul.cat_list.catList
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='dedicated_server')
+                            span.check_text Выделенный сервер 
+                            
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(checked type='checkbox' data-filter='virtual_server')
+                            span.check_text Виртуальный сервер 
+                            
+
+            li.prodCat.opened
+                .product_cat.catOpen Области использования
+                ul.cat_list.catList(style='display:block;')
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='hosting_server' checked)
+                            span.check_text Хостинг
+                            
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='office_server' checked)
+                            span.check_text Офисный сервер 
+
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='machine_study' checked)
+                            span.check_text Машинное обучение 
+
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='graphics_work')
+                            span.check_text Работа с графикой и видео
+
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='rendering')
+                            span.check_text Рендеринг
+
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='games')
+                            span.check_text Игры
+                            
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='storage' checked)
+                            span.check_text Хранение
+
+                    li
+                        label.check_v1
+                            input.hide.applyFilter(type='checkbox' data-filter='other')
+                            span.check_text Другое 
+
+            li.prodCat.opened
+                .product_cat.catOpen Графические карты
+                ul.cat_list.catList(style='display:block;')
+                    li
+                        label.check_v1
+                            input.hide.applyPart(type='checkbox' data-filter-part='Nvidia GTX 1060' data-filter='gpu')
+                            span.check_text Nvidia GTX 1060
+                    li
+                        label.check_v1
+                            input.hide.applyPart(type='checkbox' data-filter-part='Nvidia GTX 1080' data-filter='gpu')
+                            span.check_text Nvidia GTX 1080
+                    li
+                        label.check_v1
+                            input.hide.applyPart(type='checkbox' data-filter-part='Nvidia Titan X Pascal' data-filter='gpu')
+                            span.check_text Nvidia Titan X Pascal
+
+            //-li.prodCat
+                .product_cat.catOpen Цена в день
+                ul.cat_list.catList
+                    li
+                        label.check_v1
+                            input.hide.applyPrice(type='checkbox' data-filter-min='0' data-filter-max='100' data-filter='price_day')
+                            span.check_text до 100
+
+                    li
+                        label.check_v1
+                            input.hide.applyPrice(type='checkbox' data-filter-min='100' data-filter-max='200' data-filter='price_day')
+                            span.check_text 100-200
+
+                    li
+                        label.check_v1
+                            input.hide.applyPrice(type='checkbox' data-filter-min='200' data-filter-max='500' data-filter='price_day' checked)
+                            span.check_text 200-500
+
+                    li
+                        label.check_v1
+                            input.hide.applyPrice(type='checkbox' data-filter-min='500' data-filter-max='100000000' data-filter='price_day')
+                            span.check_text 500 и более
+                            
+            //-li.prodCat
+                .product_cat.catOpen На какой срок
+                ul.cat_list.catList
+                    li
+                        label.check_v1
+                            input.hide(type='checkbox')
+                            span.check_text Офисный сервер 
+
+                    li
+                        label.check_v1
+                            input.hide(type='checkbox')
+                            span.check_text Машинное обучение 
+
+                    li
+                        label.check_v1
+                            input.hide(type='checkbox')
+                            span.check_text Работа с графикой и видео
+
+                    li
+                        label.check_v1
+                            input.hide(type='checkbox')
+                            span.check_text Рендеринг
+
+                    li
+                        label.check_v1
+                            input.hide(type='checkbox')
+                            span.check_text Хранение
+
+                    li
+                        label.check_v1
+                            input.hide(type='checkbox')
+                            span.check_text Другое 
+                                    

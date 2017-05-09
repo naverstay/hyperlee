@@ -1,0 +1,131 @@
+
+.footer {
+  padding: 20px 0;
+  background: #191919;
+  position: relative;
+  z-index: 6;
+  
+  @include respond-to-min($resp_step_2) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.footer_contacts {
+  @include flex_block(row wrap, space-between, center);
+  min-height: 150px;
+  margin: 0 -10px;
+
+  > li {
+    padding: 10px;
+  }
+
+  @include respond-to-min($resp_step_3) {
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+  }
+}
+
+.f_contact {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  padding-left: 36px;
+  margin: 5px 0;
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: .015em;
+  line-height: 30px;
+}
+
+a.f_contact {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.f_contact_icon {
+  @extend %vert_centr;
+  position: absolute;
+  left: 0;
+  height: 25px;
+  width: 32px;
+
+  img {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 30px;
+  }
+}
+
+.sh_link {
+  @include transition_all(transform .3s);
+  display: block;
+  position: relative;
+  height: 17px;
+  width: 25px;
+  cursor: pointer;
+  background: url(../i/soc.png) no-repeat;
+
+  &.sh_link_1 {
+    background-position: -4px 0;
+  }
+
+  &.sh_link_2 {
+    background-position: -34px 0;
+  }
+
+  &.sh_link_3 {
+    background-position: -64px 0;
+  }
+
+  &.sh_link_4 {
+    background-position: -94px 0;
+  }
+
+  &.sh_link_5 {
+    background-position: -124px 0;
+  }
+
+  &:hover {
+    @include transform_scale(1.2);
+  }
+}
+
+.so_sh {
+  @extend %clearfix;
+
+  li {
+    float: left;
+    padding-left: 12px;
+  }
+}
+
+$rectWidth: $content-max-w;
+
+.rect_1024 {
+  @extend %hor_centr;
+  position: absolute;
+  width: $rectWidth;
+  max-width: 100%;
+  top: 0;
+  bottom: 0;
+  border: solid red;
+  border-width: 0 1px;
+  z-index: 10;
+  pointer-events: none;
+
+  &:after {
+    @extend %hor_centr;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: red;
+  }
+}
+
+

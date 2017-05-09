@@ -1,0 +1,40 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee машинное обучение')
+
+    body
+        .wrapper
+            .base
+                +header(1)
+                
+                .main_content
+                    .section_inner
+                        ul.tabColone.tab_clone
+                            li(style='display:block;' data-clone='1')
+                                .section_caption.text_center
+                                    span Передовые карты для
+                                    br
+                                    span.fz_45 машинного обучения
+
+                            li(data-clone='2')
+                                .section_caption.text_center
+                                    span Графические карты для
+                                    br
+                                    span.fz_45 машинного обучения
+
+                            li(data-clone='3')
+                                .section_caption.text_center
+                                    span Лучшие мероприятия по
+                                    br
+                                    span.fz_45 машинному обучению
+
+                            li(data-clone='4')
+                                .section_caption.text_center
+                                    span Раскрой свой потенциал
+                                    br
+                                    span.fz_45 вместе с Hyperlee
+
+                    +study(true)
+                    
+            +footer()

@@ -1,0 +1,37 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee главная')
+
+    body
+        .wrapper
+            .base
+                +header(2)
+                
+                .main_content
+                    .section_inner
+                        .section_caption.text_center
+                            span.fz_35 Заказывайте все необходимые <br> вычислительные ресурсы в одном месте
+                            
+                    .section.section_v4
+                        .section_inner.clearfix.click2OrderPoint._no_filters
+                            .col_splitter
+                            //-.col._left
+                                +col_left()
+                                
+                            .col._right.click2Order
+                                .aside_holder
+                                    .aside_center
+                                        .order_holder
+                                            +col_right()
+                                
+                            .col._center._switcher
+                                +product_offer()
+                                
+                                
+                        //-.section_inner.click2Order._aside_holder
+                            .col._center
+                                .col._right
+                                    +col_right()
+                                
+            +footer()

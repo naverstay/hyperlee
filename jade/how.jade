@@ -1,0 +1,107 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee как это работает')
+
+    body
+        .wrapper
+            .base
+                +header(4)
+                
+                .main_content
+                    .section_inner
+                        .section_caption.text_center 
+                            span Мы собираем самые лучшие предложения на рынке<br>и экономим Ваше время и деньги.
+                            
+                        .offer_list_holder: ul.offer_list._how_mode
+                            li
+                                .step_unit
+                                    ul.server_list
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                
+                                    p.text_center Лучшие дата-центры России
+                                    
+                                    ul.server_list
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_gray.png')
+                                        li
+                                            .server_item
+                                                img(src='i/server_red.png')
+                                                
+                            li
+                                .step_unit.step_promo
+                                    .step_arrow
+                                    .step_title Hyperlee Store
+                                        
+                                    .step_info Магазин вычислительных мощностей от ведущих дата-центров России и мира.
+                                    .step_info Обновление каждый день в живом режиме.
+                                    .step_info Подключение в течение 15 минут.
+                                    
+                            li
+                                .step_unit.step_feature
+                                    .step_arrow
+                                    p Машинное обучение
+    
+                                .step_unit.step_feature
+                                    .step_arrow
+                                    p Архитектура/видео/инженеры
+    
+                                .step_unit.step_feature
+                                    .step_arrow
+                                    p Большие данные/Big data
+    
+                                .step_unit.step_feature
+                                    .step_arrow
+                                    p Хранение данных
+
+                    .section.section_v2 
+                        .section_inner
+                            .individual_offer
+                                p 
+                                    | Наберите 
+                                    a.fw_b.clr_green(href='tel:+74951033040')  +7 495 103-30-40 
+                                    | <br> и наш специалист поможет вам подобрать сервер по лучшей цене
+
+            +footer()

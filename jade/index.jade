@@ -1,0 +1,78 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee главная')
+
+    body
+        .wrapper
+            .base
+                +header()
+                
+                .main_content
+                    .section_inner
+                        ul.tabColone.tab_clone
+                            li(style='display:block;' data-clone='1')
+                                .section_caption.text_center 
+                                    span Передовые карты для
+                                    br
+                                    span.fz_45 машинного обучения
+                                    
+                            li(data-clone='2')
+                                .section_caption.text_center
+                                    span Графические карты для
+                                    br
+                                    span.fz_45 машинного обучения
+                                    
+                            li(data-clone='3')
+                                .section_caption.text_center 
+                                    span Лучшие мероприятия по
+                                    br
+                                    span.fz_45 машинному обучению
+                                    
+                            li(data-clone='4')
+                                .section_caption.text_center
+                                    span Раскрой свой потенциал
+                                    br
+                                    span.fz_45 вместе с Hyperlee
+                                    
+                    +study()
+                        
+                    .section.section_v2
+                        .section_inner
+                            .individual_offer
+                                p 
+                                    | Если вам нужна индивидуальная конфигурация сервера <br> позвоните 
+                                    a.fw_b.clr_green(href='tel:+74951033040')  7 495 103-30-40 
+                                    |  и мы подключим его вам в кратчайшие сроки
+                        
+                                
+                    .section.section_v3
+                        .section_inner
+                            .text_center
+                                a.scroll_down(href='#')
+                                    img(src='i/scroll_down.png')
+                                    
+                            .section_caption.text_center
+                                span.fz_35 Заказывайте все необходимые <br> вычислительные ресурсы в одном месте
+                    .section.section_v4
+                        .section_inner.clearfix.click2OrderPoint._no_filters
+                            .col_splitter
+                            //-.col._left
+                                +col_left()
+                                
+                            .col._right.click2Order
+                                .aside_holder
+                                    .aside_center
+                                        .order_holder
+                                            +col_right()
+                                
+                            .col._center._switcher
+                                +product_offer()
+                                
+                                
+                        //-.section_inner.click2Order._aside_holder
+                            .col._center
+                                .col._right
+                                    +col_right()
+                                
+            +footer()

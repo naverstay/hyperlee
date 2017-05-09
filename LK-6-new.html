@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head><title>hyperlee hypeCoach</title>
+<!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
+    <link rel="stylesheet" href="styles/lk.css?no_cache" media="all"/>
+<script src="js/min/all.js?no_cache"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="js/jquery.scrollbar.min.js"></script>
+
+<style>
+    /*************** SCROLLBAR BASE CSS ***************/
+
+    .scroll-wrapper {
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: relative;
+    }
+
+    .scroll-wrapper > .scroll-content {
+        border: none !important;
+        box-sizing: content-box !important;
+        height: auto;
+        left: 0;
+        margin: 0;
+        max-height: none;
+        max-width: none !important;
+        overflow: scroll !important;
+        padding: 0;
+        position: relative !important;
+        top: 0;
+        width: auto !important;
+    }
+
+    .scroll-wrapper > .scroll-content::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+
+    .scroll-element {
+        display: none;
+    }
+
+    .scroll-element, .scroll-element div {
+        box-sizing: content-box;
+    }
+
+    .scroll-element.scroll-x.scroll-scrollx_visible,
+    .scroll-element.scroll-y.scroll-scrolly_visible {
+        display: block;
+    }
+
+    .scroll-element .scroll-bar,
+    .scroll-element .scroll-arrow {
+        cursor: default;
+    }
+
+    .scroll-textarea {
+        border: 1px solid #cccccc;
+        border-top-color: #999999;
+    }
+
+    .scroll-textarea > .scroll-content {
+        overflow: hidden !important;
+    }
+
+    .scroll-textarea > .scroll-content > textarea {
+        border: none !important;
+        box-sizing: border-box;
+        height: 100% !important;
+        margin: 0;
+        max-height: none !important;
+        max-width: none !important;
+        overflow: scroll !important;
+        outline: none;
+        padding: 2px;
+        position: relative !important;
+        top: 0;
+        width: 100% !important;
+    }
+
+    .scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+
+    .scrollbar-external_wrapper {
+        height: 450px !important;
+        position: relative;
+        /* width: auto !important; */
+        margin-bottom: 60px;
+    }
+
+    .scrollbar-external {
+        /* height: 400px;*/
+        overflow: auto;
+        /*  width: 600px;*/
+    }
+
+    /******************* EXTERNAL SCROLLBAR *******************/
+
+    .external-scroll_x, .external-scroll_y {
+        border: none;
+        cursor: pointer;
+        display: none;
+        position: absolute;
+        background: #efefef;
+    }
+
+    .external-scroll_x.scroll-scrollx_visible {
+        display: block;
+        height: 10px;
+        left: 0;
+        top: 473px;
+        width: 100%;
+    }
+
+    .external-scroll_y.scroll-scrolly_visible {
+        display: block;
+        height: 200px;
+        right: 10px;
+        top: 0;
+        width: 10px;
+    }
+
+    .external-scroll_y {
+        top: 50px;
+        right: 10px;
+        height: 20px;
+        width: 10px;
+    }
+
+    .external-scroll_x div,
+    .external-scroll_y div {
+        height: 100%;
+        top: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    .external-scroll_x .scroll-bar,
+    .external-scroll_y .scroll-bar {
+        background: #60cc69;
+        z-index: 12;
+        border-radius: 5px;
+    }
+
+    .external-scroll_x .scroll-bar {
+        width: 100px;
+    }
+
+    .external-scroll_y .scroll-bar {
+        height: 100px;
+    }
+</style>
+<style>
+
+
+    /*#accordion>.active {
+        width: 80%;
+        left: 0;
+    }
+    .frame { width: 100%; height: 160px; padding: 0; }
+    .frame .slidee { margin: 0; padding: 0; height: 100%; list-style: none; }
+    .frame .slidee li { float: left; margin: 0 5px 0 0; padding: 0; width: 120px; height: 100%; }
+
+    .scrollbar { width: 100%; height: 10px; }
+    .scrollbar .handle {
+        width: 100px; /!* overriden if dynamicHandle: 1 *!/
+        height: 100%;
+        background: #222;
+    }*/
+
+    .tariffs-row > div, .col {
+        float: left;
+    }
+
+    .col {
+        width: 240px;
+        margin-right: 10px;
+    }
+
+    .col.active {
+        width: 1125px;
+    }
+
+    .tm-panel {
+        float: left;
+        width: 240px;
+    }
+
+    .options {
+        padding-top: 17px;
+        float: left;
+        width: 0;
+        display: none;
+        overflow: hidden;
+    }
+
+    .options > .machines-info > .section_inner {
+        padding: 0;
+    }
+
+    .machines-info {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 415px;
+    }
+
+    .col.active .options {
+        width: 850px;
+        display: block;
+    }
+
+    #frame {
+        overflow-x: scroll;
+    }
+
+    /* Styles specific to this particular page */
+</style>
+</head>
+<body>
+<div class="wrapper wrapper-lk2">
+<div class="base">
+<div class="header header-lk">
+
+    <div class="section_inner clearfix">
+        <div class="logo_block"><a class="logo" href="index.html"><span>hyperlee</span><span
+                class="beta">beta</span>
+
+        </a></div>
+        <div class="header_contacts header_contacts-il">
+
+
+            <span class="link_icon"><img src="i/avatar.png"> </span>
+                        <span class="login-lk">username@gmail.com
+                            <a class="login-lk1"> <span><img src="i/drop_down.png"></span> </a>
+
+                <i class="login-lk2">
+                    <span><a href="">Пункт 1</a></span>
+                    <span><a href="">Пункт 1</a></span>
+                </i>
+                        </span>
+
+
+            <script>
+                $(document).ready(function () {
+                    $(".login-lk2").hide();
+                    $(".login-lk1 span").click(function () {
+                        $(this).parent().next().slideToggle();
+                    });
+                });
+            </script>
+
+
+            <span>Баланс: 500 Р</span>
+                        <span><a class="btn_v1 green_btn offer_btn il-btn"
+                                 href="#">Пополнить</a></span></div>
+        <a class="mob_menu_btn menuBtn" href="#"></a>
+
+        <div class="main_menu_holder">
+            <ul class="main_menu">
+                <li class="menu_item"><a class="menu_link" href="study.html"><span
+                        class="link_text">Конфигурации</span></a>
+                </li>
+
+                <li class="menu_item"><a class="menu_link" href="tariffs.html"><span
+                        class="link_text">Мои машины</span></a></li>
+                <li class="menu_item"><a class="menu_link" href="how.html"><span
+                        class="link_text">Заказать GPU сервер</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main_content">
+<div class="section_inner clearfix machines-wrapper clearfix-il">
+<div class="section_caption section_caption-lk text_center">
+    <p><b>Мои машины <a class="btn_v1 green_btn offer_btn il-btn il-btn2" href="#"><span
+            class="circle-lk2">+</span> Создать еще</a></b>
+    </p>
+
+</div>
+<div class="scrollbar-external_wrapper">
+<div id="frame" class="scrollbar-external">
+<div class="slidee" id="accordion">
+<div class="col inactive">
+    <div class="tm-panel">
+        <div class="machines machines-shadow">
+            <a href="#machines3" class="header-price">
+                <p>machine1 <span class="i">i</span>
+                </p>
+            </a>
+
+            <p class="red-lk"><span class="fonts-14">Бюджет: </span> 0,47 <span class="ruble">ф</span>
+            </p>
+
+            <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+            <p class="settings"><span>Ядро:</span> 1</p>
+
+            <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+            <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+            <div class="footer-price">
+
+                <p>
+                    IP адрес: 5.8.181.132</p>
+
+                <p> Создано: Сегодня, в 17:24</p>
+
+            </div>
+            <img class="circle-lk" src="i/circle.png">
+
+
+        </div>
+        <div class="grup-button center-grup-button center-grup-button-celect">
+            <button class="greed-button button-left2 buttons-green-title" data-title="Запустить"><img
+                    src="i/icon-tarif1.png"></button>
+            <button class="buttons-green2 buttons-green-title" data-title="Остановить"><img
+                    src="i/icon-tarif2.png"></button>
+            <button class="buttons-green2 buttons-green-title" data-title="Удалить"><img
+                    src="i/icon-tarif3.png"></button>
+            <button class="greed-button button-right2 buttons-green-title" data-title="Перезагрузить">
+                <img
+                        src="i/icon-tarif4.png"></button>
+        </div>
+    </div>
+    <div class="options scrollbar-external_wrapper">
+        <div class="external-scroll_y" style="display: block">
+            <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar"></div>
+            </div>
+        </div>
+        <div class="scrollbar-external machines-info" aria-expanded="true">
+            <div class="section_inner clearfix">
+
+
+                <div class="main_menu_holder main_menu_holder-lk">
+                    <ul class="main_menu main_menu-il">
+                        <li class="menu_item"><a class="menu_link" href="study.html"><span
+                                class="link_text">Мониторинг</span></a>
+                        </li>
+
+                        <li class="menu_item"><a class="menu_link" href="tariffs.html"><span class="link_text">История
+                                </span></a>
+                        </li>
+                        <li class="menu_item"><a class="menu_link" href="how.html"><span
+                                class="link_text">Изменить</span></a>
+                        </li>
+                        <li class="menu_item"><a class="menu_link" href="how.html"><span
+                                class="link_text">Пользовательские данные</span></a>
+                        </li>
+                    </ul>
+
+
+
+                    <button class="header-price h-center" data-target="#machines1" data-toggle="collapse" type="button" class="close"
+                            aria-hidden="true"><img
+                            src="i/close.png"></button>
+
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col inactive">
+    <div class="tm-panel">
+        <div class="machines machines-shadow">
+            <a href="#machines3" class="header-price">
+                <p>machine2 <span class="i">i</span>
+                </p>
+            </a>
+
+            <p class="red-lk"><span class="fonts-14">Бюджет: </span> 0,47 <span class="ruble">ф</span>
+            </p>
+
+            <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+            <p class="settings"><span>Ядро:</span> 1</p>
+
+            <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+            <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+            <div class="footer-price">
+
+                <p>
+                    IP адрес: 5.8.181.132</p>
+
+                <p> Создано: Сегодня, в 17:24</p>
+
+            </div>
+            <img class="circle-lk" src="i/circle.png">
+
+
+        </div>
+        <div class="grup-button center-grup-button center-grup-button-celect">
+            <button class="greed-button button-left2 buttons-green-title" data-title="Запустить"><img
+                    src="i/icon-tarif1.png"></button>
+            <button class="buttons-green2 buttons-green-title" data-title="Остановить"><img
+                    src="i/icon-tarif2.png"></button>
+            <button class="buttons-green2 buttons-green-title" data-title="Удалить"><img
+                    src="i/icon-tarif3.png"></button>
+            <button class="greed-button button-right2 buttons-green-title" data-title="Перезагрузить">
+                <img
+                        src="i/icon-tarif4.png"></button>
+        </div>
+    </div>
+    <div class="options scrollbar-external_wrapper">
+        <div class="external-scroll_y" style="display: block">
+            <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar"></div>
+            </div>
+        </div>
+        <div class="scrollbar-external machines-info" aria-expanded="true">
+            <div class="section_inner clearfix">
+
+
+                <div class="main_menu_holder main_menu_holder-lk">
+                    <ul class="main_menu main_menu-il">
+                        <li class="menu_item"><a class="menu_link" href="study.html"><span
+                                class="link_text">Мониторинг</span></a>
+                        </li>
+
+                        <li class="menu_item"><a class="menu_link" href="tariffs.html"><span class="link_text">История
+                                </span></a>
+                        </li>
+                        <li class="menu_item"><a class="menu_link" href="how.html"><span
+                                class="link_text">Изменить</span></a>
+                        </li>
+                        <li class="menu_item"><a class="menu_link" href="how.html"><span
+                                class="link_text">Пользовательские данные</span></a>
+                        </li>
+                    </ul>
+
+
+
+                    <button class="header-price h-center" data-target="#machines1" data-toggle="collapse" type="button" class="close"
+                            aria-hidden="true"><img
+                            src="i/close.png"></button>
+
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col inactive">
+    <div class="tm-panel">
+        <div class="machines machines-shadow">
+            <a href="#machines3" class="header-price">
+                <p>machine3 <span class="i">i</span>
+                </p>
+            </a>
+
+            <p class="red-lk"><span class="fonts-14">Бюджет: </span> 0,47 <span class="ruble">ф</span>
+            </p>
+
+            <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+            <p class="settings"><span>Ядро:</span> 1</p>
+
+            <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+            <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+            <div class="footer-price">
+
+                <p>
+                    IP адрес: 5.8.181.132</p>
+
+                <p> Создано: Сегодня, в 17:24</p>
+
+            </div>
+            <img class="circle-lk" src="i/circle.png">
+
+
+        </div>
+        <div class="grup-button center-grup-button center-grup-button-celect">
+            <button class="greed-button button-left2 buttons-green-title" data-title="Запустить"><img
+                    src="i/icon-tarif1.png"></button>
+            <button class="buttons-green2 buttons-green-title" data-title="Остановить"><img
+                    src="i/icon-tarif2.png"></button>
+            <button class="buttons-green2 buttons-green-title" data-title="Удалить"><img
+                    src="i/icon-tarif3.png"></button>
+            <button class="greed-button button-right2 buttons-green-title" data-title="Перезагрузить">
+                <img
+                        src="i/icon-tarif4.png"></button>
+        </div>
+    </div>
+    <div class="options scrollbar-external_wrapper">
+        <div class="external-scroll_y" style="display: block">
+            <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar"></div>
+            </div>
+        </div>
+        <div class="scrollbar-external machines-info" aria-expanded="true">
+            <div class="section_inner clearfix">
+
+
+                <div class="main_menu_holder main_menu_holder-lk">
+                    <ul class="main_menu main_menu-il">
+                        <li class="menu_item"><a class="menu_link" href="study.html"><span
+                                class="link_text">Мониторинг</span></a>
+                        </li>
+
+                        <li class="menu_item"><a class="menu_link" href="tariffs.html"><span class="link_text">История
+                                </span></a>
+                        </li>
+                        <li class="menu_item"><a class="menu_link" href="how.html"><span
+                                class="link_text">Изменить</span></a>
+                        </li>
+                        <li class="menu_item"><a class="menu_link" href="how.html"><span
+                                class="link_text">Пользовательские данные</span></a>
+                        </li>
+                    </ul>
+
+
+
+                    <button class="header-price h-center" data-target="#machines1" data-toggle="collapse" type="button" class="close"
+                            aria-hidden="true"><img
+                            src="i/close.png"></button>
+
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="machines">
+                        <a class="header-price">
+                            <p>p1.small</p>
+                        </a>
+
+                        <p class="red-lk">0,47 <span class="ruble">ф</span><span class="font14"> в час</span></p>
+
+                        <p class="settings"><span>ОС:</span> Ubuntu</p>
+
+                        <p class="settings"><span>Ядро:</span> 1</p>
+
+                        <p class="settings"><span>RAM:</span> 512 Мб</p>
+
+                        <p class="settings"><span>Диск:</span> 20 Гб</p>
+
+
+                        <p class="red-lk">340 <span class="ruble">ф</span><span class="font14"> в месяц</span></p>
+                        <img class="circle-lk" src="i/circle.png">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="external-scroll_x">
+    <div class="scroll-element_outer">
+        <div class="scroll-element_size"></div>
+        <div class="scroll-element_track"></div>
+        <div class="scroll-bar"></div>
+    </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="footer">
+    <div class="section_inner">
+        <ul class="footer_contacts">
+            <li class="fz_16">
+                <a style="padding-right: 10px;" class="f_contact" href="">
+                    <span class="f_contact_icon">
+                        <img src="i/home.png"></span>
+                    <span>На главную </span></a>
+                <a class="f_contact" href="tel:+74951033040">
+                    <span class="f_contact_icon">
+                         <img src="i/phone.png"/></span>
+                    <span>+7 495 103-30-40</span></a>
+                <a class="f_contact" href="https://telegram.me/@hyperlee">
+                    <span сlass="f_contact_icon"></span>
+                    <span>@hyperlee</span></a>
+            </li>
+            <li>
+                <div class="f_contact"><span class="f_contact_icon"><img src="i/pin.png"/></span><span>Москва, Большой Каретный пер, дом 20, стр. 3 офис 14</span>
+                </div>
+            </li>
+            <li class="fz_16"><a class="f_contact" href="mailto:moscow@hyperlee.com"><span
+                    class="f_contact_icon"><img src="i/envelope.png"/></span><span>moscow@hyperlee.com</span></a>
+            </li>
+            <li>
+                <ul class="so_sh">
+                    <li><a class="sh_link sh_link_5" href="https://vk.com/hyperlee"></a></li>
+                    <li><a class="sh_link sh_link_1" href="https://www.facebook.com/hyperleestore/"></a></li>
+                    <li><img src="i/lang-ru.png">
+                        <a class="lang1"> <span><img src="i/drop_down-footer.png"></span> </a>
+
+                        <h3 class="lang2">
+                            <span><a href=""><img src="i/lang-ru.png"></a></span>
+                            <span><a href=""><img src="i/lang-ru.png"></a></span>
+                        </h3>
+                    </li>
+                </ul>
+
+                <script>
+                    $(document).ready(function () {
+                        $(".lang2").hide();
+                        $(".lang1 span").click(function () {
+                            $(this).parent().next().slideToggle();
+                        });
+                    });
+                </script>
+
+
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var $acc = document.getElementById("accordion");
+
+    var $elements = $acc.getElementsByClassName('col');
+
+    var $accLinks = $acc.getElementsByClassName('header-price');
+
+    var $i;
+
+    var totalWidth = 0;
+
+    for ($i = 0; $i < $accLinks.length; $i++) {
+        $accLinks[$i].addEventListener('click', toggleItem, false);
+    }
+
+    function toggleItem(totalWidth) {
+        var $col = this.parentNode.parentNode.parentNode.className;  // col
+        for ($i = 0; $i < $elements.length; $i++) {
+            $elements[$i].className = 'col inactive';
+
+        }
+        if ($col == 'col inactive') {
+            this.parentNode.parentNode.parentNode.className = 'col active';
+        }
+    }
+
+    for ($i = 0; $i < $elements.length; $i++) {
+        totalWidth += $elements[$i].offsetWidth;
+    }
+
+    $acc.style.width = totalWidth + 1300 + 'px';
+
+    jQuery(document).ready(function () {
+        jQuery('.scrollbar-external').scrollbar({
+            "autoScrollSize": false,
+            "scrollx": $('.external-scroll_x'),
+            "scrolly": $('.external-scroll_y')
+        });
+    });
+    /*function toggleItem() {
+     var itemClass = this.parentNode.className;
+     for (i = 0; i < accItem.length; i++) {
+     accItem[i].className = 'accordionItem close';
+     }
+     if (itemClass == 'accordionItem close') {
+     this.parentNode.className = 'accordionItem open';
+     }
+     }*/
+
+
+
+    /* for ($i = 0; $i < $elements.length; $i++) {
+     totalWidth += $elements[$i].offsetWidth;
+
+     $elements[$i].children[0].children[0].onclick = function () {
+
+     console.log($elements);
+     // option active
+     this.parentNode.parentNode.children[1].classList.toggle("active");
+     // col active
+     this.parentNode.parentNode.classList.toggle("active");
+
+
+
+     /!* Toggle between adding and removing the "active" class,
+     to highlight the button that controls the panel *!/
+     //this.classList.toggle("active");
+     //this.parentNode.parentNode.classList.toggle("active");
+     /!* Toggle between hiding and showing the active panel *!/
+     /!*var panel = this.parentNode.parentNode.children[1];
+     if (panel.style.display === "block") {
+     panel.style.display = "none";
+     //this.parentNode.parentNode.style.width = '300px';
+     } else {
+     //this.parentNode.parentNode.style.width = '800px';
+     panel.style.display = "block";
+     }*!/
+     }
+     }*/
+
+
+
+    /*$(function()
+     {
+     $('.scroll-pane').jScrollPane();
+     });*/
+
+    // using on
+    /*$('#frame').on('mousewheel', function(event) {
+     console.log(event.deltaX, event.deltaY, event.deltaFactor);
+     });*/
+
+</script>
+
+</body>
+</html>
