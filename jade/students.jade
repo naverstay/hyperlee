@@ -1,0 +1,63 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('hyperlee студентам')
+
+    body
+        .wrapper.no_banner
+            .base
+                +header_2(2)
+
+                .main_content
+                    .student_section_w
+                        .student_section
+                            .student_img
+                                img(src='i/student.jpg')
+                        .section_inner
+                            .student_text
+                                .student_text_inner
+                                    p.fz_24.fw_b Будущее нашего мира <br> в&nbsp;студенческих кампусах. 
+                                    p.fz_24 Мы инвестируем свое время в&nbsp;развитие местных студенческих сообществ в области машинного обучения. 
+                                    
+                                    
+                    .scout_section.cb
+                        .section_inner
+                            .section_caption.text_center
+                                span.fz_30 Знакомьтесь с нашими скаутами в ведущих <br> технических Университетах
+                                
+                            ul.scout_list
+                                li
+                                    .scout_box
+                                        p В Hyperlee я создаю сообщество студентов МГУ, которые увлекаются машинным обучением. На мехмате, физфаке и ВМК есть много сильных ребят, если их объединить, получится своего рода dream team. <br> Компания может заниматься только коммерцией, но, если она помимо этого содействует развитию талантливых молодых людей, хочется быть частью её команды.
+                                    .scout_info
+                                        .scout_avatar
+                                            img(src='i/author_1.png')
+                                            
+                                        .scout_name Маргарита Пахотина
+                                        .scout_post Hyperlee Scout, cтудентка МГУ, факультет наук о материалах
+                                            
+                                li
+                                    .scout_box
+                                        p В МФТИ на каждом факультете учатся ребята, которые не просто увлечены, а без преувеличения живут IT сферой и ее трендами. Самый перспективный из таких трендов - машинное обучение. Студентов, активно следящих за этим направлением, я зову в сообщество Hyperlee на Физтехе, где они могут получить не только знания, но и найти единомышленников, с которыми можно будет создать что-то поистине грандиозное.
+                                    .scout_info
+                                        .scout_avatar
+                                            img(src='i/author_2.png')
+                                            
+                                        .scout_name Шарапов Роман
+                                        .scout_post Hyperlee Scout, студент МФТИ, Физтех
+                                            
+                            .scout_join
+                                .scout_join_img
+                                    img(src='i/bench.jpg')
+                                .scout_join_text
+                                    p.text_1 Стань частью международной команды, прокачай свои управленческие и ораторские навыки, продвинь свой личный бренд в Университете. 
+                                    
+                                    p.text_2
+                                        span.fw_b Роль в ВУЗе: <br>
+                                        span Продвижение бренда;  Организация и проведение  мероприятий Hyperlee.
+                                        
+                                    .text_center
+                                        a.btn_v1.green_btn.offer_btn(href='#')
+                                            span.fw_b Отправить заявку
+
+            +footer()

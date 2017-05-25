@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .dialog_butt_v1 .dialog_butt_wrap {
   display: -webkit-box;
   display: -moz-box;
@@ -14,11 +15,11 @@
   -webkit-box-align: start;
 }
 
-.comparison_item:before, .benefits_list:before, .offer_list:before, .server_list:before, .server_unit:before, .form_row:before, .so_sh:before, .comparison_item:after, .benefits_list:after, .offer_list:after, .server_list:after, .server_unit:after, .form_row:after, .so_sh:after {
+.comparison_item:before, .benefits_list:before, .offer_list:before, .server_list:before, .server_unit:before, .scout_list:before, .scout_join:before, .form_row:before, .so_sh:before, .comparison_item:after, .benefits_list:after, .offer_list:after, .server_list:after, .server_unit:after, .scout_list:after, .scout_join:after, .form_row:after, .so_sh:after {
   content: "";
   display: table;
 }
-.comparison_item:after, .benefits_list:after, .offer_list:after, .server_list:after, .server_unit:after, .form_row:after, .so_sh:after {
+.comparison_item:after, .benefits_list:after, .offer_list:after, .server_list:after, .server_unit:after, .scout_list:after, .scout_join:after, .form_row:after, .so_sh:after {
   clear: both;
 }
 
@@ -250,6 +251,13 @@ a {
   font-style: normal;
 }
 @font-face {
+  font-family: 'UkrainianBodoniRegular';
+  src: url(../fonts/UkrainianBodoniRegular.eot);
+  src: url(../fonts/UkrainianBodoniRegular.eot?#iefix) format("embedded-opentype"), url(../fonts/UkrainianBodoniRegular.woff) format("woff"), url(../fonts/UkrainianBodoniRegular.ttf) format("truetype"), url(../fonts/UkrainianBodoniRegular.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'KirSansCyr';
   src: url(../fonts/KirSansCyr.eot);
   src: url(../fonts/KirSansCyr.eot?#iefix) format("embedded-opentype"), url(../fonts/KirSansCyr.woff) format("woff"), url(../fonts/KirSansCyr.ttf) format("truetype"), url(../fonts/KirSansCyr.svg) format("svg");
@@ -431,6 +439,10 @@ body {
 }
 
 .clearfix:after {
+  clear: both;
+}
+
+.cb {
   clear: both;
 }
 
@@ -2115,6 +2127,259 @@ body {
 .tech_list li img {
   display: inline-block;
   vertical-align: middle;
+}
+
+.student_section_w {
+  overflow: hidden;
+  margin-top: -65px;
+}
+@media only screen and (min-width: 768px) {
+  .student_section_w {
+    margin-top: -48px;
+  }
+}
+
+.student_section {
+  background: #f9f9f9;
+  position: relative;
+  z-index: 1;
+}
+
+.student_img {
+  text-align: center;
+}
+.student_img img {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .student_img {
+    float: left;
+    width: 50%;
+    text-align: right;
+  }
+}
+
+.student_text {
+  position: relative;
+  padding: 20px 0;
+}
+.student_text:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 10000px;
+  min-height: 1000px;
+  margin-left: -5000px;
+  background: #f9f9f9;
+}
+@media only screen and (min-width: 768px) {
+  .student_text {
+    float: right;
+    width: 50%;
+    padding-top: 150px;
+    padding-left: 30px;
+  }
+}
+
+.student_text_inner {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 22px;
+  line-height: 1.7;
+  text-align: center;
+}
+.student_text_inner:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -28px;
+  width: 56px;
+  height: 2px;
+  background: #020202;
+}
+.student_text_inner p {
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .student_text_inner p {
+    margin-bottom: 40px;
+  }
+}
+
+.scout_section {
+  padding-top: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .scout_section {
+    padding-top: 35px;
+  }
+}
+
+.scout_list {
+  padding-top: 20px;
+}
+.scout_list > li {
+  margin-bottom: 58px;
+}
+@media only screen and (min-width: 768px) {
+  .scout_list {
+    margin-left: -38px;
+    padding: 35px 0 20px;
+  }
+  .scout_list > li {
+    padding-left: 38px;
+    float: left;
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .scout_list {
+    margin-left: -108px;
+    padding: 45px 52px 20px;
+  }
+  .scout_list > li {
+    padding-left: 108px;
+  }
+}
+
+.scout_box {
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 15px;
+  line-height: 2;
+  padding: 20px 30px 70px;
+}
+.scout_box p {
+  margin-bottom: 8px;
+}
+.scout_box:before {
+  content: '“';
+  position: absolute;
+  left: 25px;
+  top: -3px;
+  font: 50px/1 UkrainianBodoniRegular, sans-serif;
+  color: #60cc69;
+}
+@media only screen and (min-width: 768px) {
+  .scout_box {
+    padding: 38px 45px 95px 45px;
+  }
+  .scout_box:before {
+    top: -7px;
+    left: 47px;
+    font-size: 90px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .scout_box {
+    padding: 58px 55px 95px 85px;
+  }
+  .scout_box:before {
+    top: -10px;
+    left: 77px;
+    font-size: 123px;
+  }
+}
+
+.scout_info {
+  margin-top: -57px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.scout_avatar {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto 15px;
+  border-radius: 100%;
+  border: 9px solid #fff;
+  overflow: hidden;
+}
+.scout_avatar img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.scout_name {
+  font: 15px RALEWAYBOLD, sans-serif;
+  margin-bottom: 10px;
+}
+
+.scout_post {
+  font-size: 15px;
+}
+
+.scout_join {
+  margin-bottom: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .scout_join {
+    background: #f9f9f9;
+    margin-bottom: 100px;
+  }
+}
+
+.scout_join_img img {
+  display: block;
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .scout_join_img {
+    float: left;
+    width: 50%;
+  }
+}
+
+.scout_join_text {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+  font: 16px/2 RALEWAYLIGHT, sans-serif;
+}
+.scout_join_text p {
+  margin-bottom: 25px;
+}
+.scout_join_text .text_1 {
+  position: relative;
+  padding-bottom: 35px;
+}
+.scout_join_text .text_1:before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -28px;
+  width: 56px;
+  height: 2px;
+  background: #020202;
+}
+@media only screen and (min-width: 768px) {
+  .scout_join_text {
+    float: left;
+    width: 50%;
+    font-size: 20px;
+    padding: 55px 35px;
+  }
+  .scout_join_text .text_1 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 380px;
+  }
+  .scout_join_text .text_2 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 490px;
+  }
 }
 
 .text_center {
