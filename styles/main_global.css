@@ -2382,6 +2382,28 @@ body {
   }
 }
 
+.start_block {
+  width: 478px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.agreement_block {
+  position: relative;
+  padding-left: 33px;
+  margin-left: 15px;
+  font: 12px/20px RALEWAYMEDIUM, sans-serif;
+  text-align: left;
+  letter-spacing: -0.005em;
+  margin-bottom: 25px;
+}
+.agreement_block .check_v1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
 .text_center {
   text-align: center;
 }
@@ -3082,6 +3104,13 @@ textarea.input_v2 {
   margin-bottom: 20px;
 }
 
+.form_text {
+  text-align: center;
+  padding: 20px 0 10px;
+  color: #020202;
+  font: 16px RALEWAYMEDIUM, sans-serif;
+}
+
 .form_caption {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -3102,6 +3131,17 @@ textarea.input_v2 {
 .form_inner .offer_control {
   padding: 20px 0;
 }
+.form_inner .offer_control._line_mod {
+  text-align: center;
+}
+.form_inner .offer_control._line_mod li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
+}
+.form_inner .offer_control._line_mod li .btn_v1 {
+  min-width: 130px;
+}
 .form_inner .btn_v1.offer_btn {
   min-width: 234px;
 }
@@ -3109,6 +3149,11 @@ textarea.input_v2 {
   margin-bottom: 16px;
 }
 
+.form_cell._refill_cell {
+  width: 266px;
+  max-width: 100%;
+  margin: 32px auto 0;
+}
 .form_cell._mod_check {
   margin: 40px 0 1px;
 }
@@ -3256,9 +3301,12 @@ textarea.input_v2 {
   color: #fff;
   background: #60cc69;
   border-bottom: 4px solid #489f50;
+  text-decoration: none;
 }
-.green_btn:hover {
+.green_btn:focus, .green_btn:hover {
   background: #489f50;
+  color: #fff;
+  text-decoration: none;
 }
 
 .white_green_btn {

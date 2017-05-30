@@ -138,9 +138,13 @@
   color: #fff;
   background: #60cc69;
   border-bottom: 4px solid #489f50;
-
+  text-decoration: none;
+  
+  &:focus,
   &:hover {
     background: #489f50;
+    color: #fff;
+    text-decoration: none;
   }
 }
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/lk.css?no_cache" media="all"/>
     <script src="js/min/all.js?no_cache"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/jquery-ui-1.11.4.js?no_cache"></script>
 
 </head>
 <body>
@@ -161,9 +162,22 @@
                                 </div>
                             </div>
 
-                            <ul>
+                            <ul class="cb start_block">
+                                <li>
+                                  <div class="agreement_block">
+                                    <label class="check_v1"><input class="hide" id="agreement" name="agreement"
+                                                                   type="checkbox"><span class="check_text fw_sb"><span
+                                      class="_rub"> Г</span></span></label>
+
+                                    <span>Я подтверждаю своё согласие с условиями</span> <br>
+                                    <a class="clr_green" href="#">Пользовательского соглашения</a>
+                                    <span> и </span>
+                                    <a class="clr_green" href="#">Договором оказания услуг
+                                      по организации мероприятия</a>
+                                  </div>
+                                </li>
                                 <li class="text_center">
-                                    <button class="btn_v1 green_btn offer_btn"><span
+                                    <button class="btn_v1 green_btn offer_btn refillOpenBtn"><span
                                             class="fw_b">Начать работу</span>
                                     </button>
                                 </li>
@@ -213,22 +227,63 @@
                         </h3>
                     </li>
                 </ul>
-
-                <script>
-                    $(document).ready(function () {
-                        $(".lang2").hide();
-                        $(".lang1 span").click(function () {
-                            $(this).parent().next().slideToggle();
-                        });
-                    });
-                </script>
-
-
             </li>
         </ul>
     </div>
 </div>
-
+  <div class="popup_form" id="refill_form" style="display:none">
+    <form class="sendMailForm" action="contact.php" method="POST">
+      <div class="form_inner">
+        <div class="form_title">Пополнение баланса</div>
+        <div class="form_cell _refill_cell"><input class="f_input input_v3 text_center" required="required" placeholder="Введите сумму" name="refill_sum"/></div>
+        <ul class="offer_control">
+          <li class="text_center">
+            <button class="btn_v1 green_btn offer_btn"><span class="fw_b">Оплатить</span></button>
+          </li>
+        </ul>
+        <div class="serverAnswer"></div>
+      </div>
+    </form>
+  </div>
 </div>
+<script>
+  $(document).ready(function () {
+    var $refill_form;
+    
+    $(".lang2").hide();
+    $(".lang1 span").click(function () {
+      $(this).parent().next().slideToggle();
+    });
+
+
+    if ($("#refill_form").length) {
+
+      $refill_form = $("#refill_form").dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        show: "fade",
+        position: {my: "center center", at: "center center", of: window},
+        draggable: true,
+        dialogClass: 'dialog_global dialog_g_size_1 dialog_close_butt_mod_1 title_center_mod dialog_butt_v1',
+        width: 545,
+        open: function (event, ui) {
+          $body.addClass('dialog_regular_open');
+        },
+        close: function (event, ui) {
+          $body.removeClass('dialog_regular_open');
+        }
+      });
+
+
+      $('.refillOpenBtn').on('click', function () {
+        $refill_form.dialog('open');
+
+        return false;
+      });
+    }
+  });
+</script>
 </body>
 </html>

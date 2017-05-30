@@ -63,6 +63,10 @@ $(function ($) {
 
             return false;
         })
+        .delegate('.closePopupBtn', 'click', function (e) {
+            all_dialog_close_gl();
+            return false;
+        })
         .delegate('.menuBtn', 'click', function (e) {
             $body.toggleClass('menu_opened');
 

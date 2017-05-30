@@ -285,6 +285,13 @@ textarea.input_v2 {
   margin-bottom: 20px;
 }
 
+.form_text {
+  text-align: center;
+  padding: 20px 0 10px;
+  color: #020202;
+  font: 16px $RALEWAYMEDIUM;
+}
+
 .form_caption {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -303,6 +310,20 @@ textarea.input_v2 {
 
   .offer_control {
     padding: 20px 0;
+
+    &._line_mod {
+      text-align: center;
+
+      li {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 10px;
+
+        .btn_v1 {
+          min-width: 130px;
+        }
+      }
+    }
   }
 
   .btn_v1.offer_btn {
@@ -315,6 +336,12 @@ textarea.input_v2 {
 }
 
 .form_cell {
+
+  &._refill_cell {
+    width: 266px;
+    max-width: 100%;
+    margin: 32px auto 0;
+  }
 
   &._mod_check {
     margin: 40px 0 1px;

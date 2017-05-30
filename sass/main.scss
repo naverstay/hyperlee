@@ -1845,7 +1845,7 @@ body {
 .student_section_w {
   overflow: hidden;
   margin-top: -65px;
-  
+
   @include respond-to-min($resp_step_2) {
     margin-top: -48px;
   }
@@ -2068,7 +2068,7 @@ body {
   p {
     margin-bottom: 25px;
   }
-  
+
   .text_1 {
     position: relative;
     padding-bottom: 35px;
@@ -2096,12 +2096,35 @@ body {
       margin-right: auto;
       max-width: 380px;
     }
-    
+
     .text_2 {
       margin-left: auto;
       margin-right: auto;
       max-width: 490px;
     }
+  }
+}
+
+.start_block {
+  width: 478px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.agreement_block {
+  position: relative;
+  padding-left: 33px;
+  margin-left: 15px;
+  font: 12px/20px $RALEWAYMEDIUM;
+  text-align: left;
+  letter-spacing: -0.005em;
+  margin-bottom: 25px;
+  
+  .check_v1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
   }
 }
 
