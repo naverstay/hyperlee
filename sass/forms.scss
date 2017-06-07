@@ -359,3 +359,28 @@ textarea.input_v2 {
     margin-bottom: 10px;
   }
 }
+
+.popup_msg {
+  padding: 0 18px 25px 18px;
+}
+
+.msg_block {
+  position: relative;
+  padding-left: 62px;
+  font: 14px/1.6 $RALEWAYMEDIUM;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 42px;
+    height: 42px;
+  }
+
+  &.msg_success {
+    &:before {
+      background: url(../i/success.png) no-repeat 0 0;
+    }
+  }
+}

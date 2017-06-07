@@ -38,6 +38,10 @@
   box-shadow: 0 3px 13px rgba(59, 59, 59, .86);
 }
 
+.dialog_global_v2 {
+  box-shadow: 0 0 9px rgba(0, 0, 0, .09);
+}
+
 .ui-dialog-content {
   min-height: 0 !important;
 
@@ -96,14 +100,26 @@
       right: 0;
       background: url(../i/close.png) no-repeat 50% 50%;
     }
+  }
+
+  .dialog_close_butt_mod_2 & {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    background: #fff;
 
     &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(../i/close_small.png) no-repeat 50% 50%;
     }
-    &:hover {
-      &:before {
-      }
-    }
-
   }
 
   .no_close_mod & {
@@ -111,9 +127,8 @@
   }
 
   .no_title_mod & {
-
+   
   }
-
 }
 
 .ui-dialog-titlebar {
@@ -123,7 +138,7 @@
   }
 
   .dialog_g_size_1 & {
-    padding: 10px 50px 10px 20px;
+    padding: 9px 50px 9px 20px;
     background: #fff;
     color: #1d1d1b;
     font-weight: bold;

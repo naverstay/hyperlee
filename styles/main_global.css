@@ -344,6 +344,10 @@ a {
   box-shadow: 0 3px 13px rgba(59, 59, 59, 0.86);
 }
 
+.dialog_global_v2 {
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.09);
+}
+
 .ui-dialog-content {
   min-height: 0 !important;
 }
@@ -395,6 +399,24 @@ a {
   right: 0;
   background: url(../i/close.png) no-repeat 50% 50%;
 }
+.dialog_close_butt_mod_2 .ui-dialog-titlebar-close {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+}
+.dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../i/close_small.png) no-repeat 50% 50%;
+}
 .no_close_mod .ui-dialog-titlebar-close {
   display: none !important;
 }
@@ -403,7 +425,7 @@ a {
   cursor: move;
 }
 .dialog_g_size_1 .ui-dialog-titlebar {
-  padding: 10px 50px 10px 20px;
+  padding: 9px 50px 9px 20px;
   background: #fff;
   color: #1d1d1b;
   font-weight: bold;
@@ -3165,6 +3187,27 @@ textarea.input_v2 {
 }
 ._cell_v5 .form_cell {
   margin-bottom: 10px;
+}
+
+.popup_msg {
+  padding: 0 18px 25px 18px;
+}
+
+.msg_block {
+  position: relative;
+  padding-left: 62px;
+  font: 14px/1.6 RALEWAYMEDIUM, sans-serif;
+}
+.msg_block:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+}
+.msg_block.msg_success:before {
+  background: url(../i/success.png) no-repeat 0 0;
 }
 
 .btn_v1 {
