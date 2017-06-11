@@ -32,7 +32,8 @@ module.exports = function (grunt) {
                     noCache: true
                 },
                 files: {
-                    'styles/main_global.css': 'sass/main_global.scss'
+                    'styles/main_global.css': 'sass/main_global.scss',
+                    'styles/lk.css': 'sass/lk.scss'
                 }
             }
         },

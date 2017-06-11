@@ -185,7 +185,7 @@
   margin: 0 21.5%;
   float: left;
   border-radius: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -899,4 +899,46 @@ button.header-price.h-center {
   width: 100%;
   z-index: 10000000000000000000000;
   content: "";
+}
+
+.user_data {
+  max-width: 840px;
+  margin: 30px auto;
+  position: relative;
+  padding: 27px 32px;
+  background: #fff;
+}
+
+.user_info {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+  color: #020202;
+  font-size: 14px;
+  margin-bottom: 37px;
+  
+  dt {
+    width: 32%;
+    float: left;
+    padding-bottom: 29px;
+  }
+
+  dd {
+    width: 68%;
+    float: left;
+    padding-bottom: 29px;
+    font-family: RALEWAYMEDIUM, sans-serif;
+  }
+
+  ._bordered {
+    border-bottom: 1px solid #f6fbf5;
+    margin-bottom: 30px;
+    font: 16px RALEWAYMEDIUM, sans-serif;
+  }
 }

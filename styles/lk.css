@@ -1,12 +1,10 @@
 @charset "UTF-8";
 /*личный кабинет*/
-
 .wrapper-lk {
   padding-top: 125px;
 }
 
 /*шапка*/
-
 .header-lk {
   padding-bottom: 20px;
 }
@@ -294,7 +292,6 @@
 }
 
 /*выберете машину*/
-
 .section_caption-lk span {
   font-size: 24px;
   color: #020202;
@@ -456,7 +453,6 @@ button.greed-button.button-right img {
 }
 
 /*табы*/
-
 .instans {
   padding: 0 16px 16px 16px;
   display: block;
@@ -645,7 +641,6 @@ section.tabbs {
     opacity: 1;
   }
 }
-
 /*мои машины*/
 span.circle-lk2 {
   border-radius: 50%;
@@ -899,4 +894,41 @@ button.header-price.h-center {
   width: 100%;
   z-index: 10000000000000000000000;
   content: "";
+}
+
+.user_data {
+  max-width: 840px;
+  margin: 30px auto;
+  position: relative;
+  padding: 27px 32px;
+  background: #fff;
+}
+
+.user_info {
+  color: #020202;
+  font-size: 14px;
+  margin-bottom: 37px;
+}
+.user_info:before, .user_info:after {
+  content: "";
+  display: table;
+}
+.user_info:after {
+  clear: both;
+}
+.user_info dt {
+  width: 32%;
+  float: left;
+  padding-bottom: 29px;
+}
+.user_info dd {
+  width: 68%;
+  float: left;
+  padding-bottom: 29px;
+  font-family: RALEWAYMEDIUM, sans-serif;
+}
+.user_info ._bordered {
+  border-bottom: 1px solid #f6fbf5;
+  margin-bottom: 30px;
+  font: 16px RALEWAYMEDIUM, sans-serif;
 }
