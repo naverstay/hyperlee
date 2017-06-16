@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/lk.css?no_cache" media="all"/>
 <script src="js/min/all.js?no_cache"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/jquery-ui-1.11.4.js?no_cache"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
@@ -330,11 +331,11 @@
 
         </div>
         <div class="grup-button center-grup-button center-grup-button-celect">
-            <button class="greed-button button-left2 buttons-green-title" data-title="Запустить"><img
+            <button class="greed-button button-left2 buttons-green-title startBtn" data-title="Запустить"><img
                     src="i/icon-tarif1.png"></button>
             <button class="buttons-green2 buttons-green-title" data-title="Остановить"><img
                     src="i/icon-tarif2.png"></button>
-            <button class="buttons-green2 buttons-green-title" data-title="Удалить"><img
+            <button class="buttons-green2 buttons-green-title removeBtn" data-title="Удалить"><img
                     src="i/icon-tarif3.png"></button>
             <button class="greed-button button-right2 buttons-green-title" data-title="Перезагрузить">
                 <img
@@ -529,13 +530,13 @@
 
         </div>
         <div class="grup-button center-grup-button center-grup-button-celect">
-            <button class="greed-button button-left2 buttons-green-title" data-title="Запустить"><img
+            <button class="greed-button button-left2 buttons-green-title startSuccess" data-title="Запустить"><img
                     src="i/icon-tarif1.png"></button>
-            <button class="buttons-green2 buttons-green-title" data-title="Остановить"><img
+            <button class="buttons-green2 buttons-green-title stopSuccess" data-title="Остановить"><img
                     src="i/icon-tarif2.png"></button>
             <button class="buttons-green2 buttons-green-title" data-title="Удалить"><img
                     src="i/icon-tarif3.png"></button>
-            <button class="greed-button button-right2 buttons-green-title" data-title="Перезагрузить">
+            <button class="greed-button button-right2 buttons-green-title restartSuccess" data-title="Перезагрузить">
                 <img
                         src="i/icon-tarif4.png"></button>
         </div>
@@ -728,13 +729,13 @@
 
         </div>
         <div class="grup-button center-grup-button center-grup-button-celect">
-            <button class="greed-button button-left2 buttons-green-title" data-title="Запустить"><img
+            <button class="greed-button button-left2 buttons-green-title startSuccess" data-title="Запустить"><img
                     src="i/icon-tarif1.png"></button>
-            <button class="buttons-green2 buttons-green-title" data-title="Остановить"><img
+            <button class="buttons-green2 buttons-green-title stopSuccess" data-title="Остановить"><img
                     src="i/icon-tarif2.png"></button>
             <button class="buttons-green2 buttons-green-title" data-title="Удалить"><img
                     src="i/icon-tarif3.png"></button>
-            <button class="greed-button button-right2 buttons-green-title" data-title="Перезагрузить">
+            <button class="greed-button button-right2 buttons-green-title restartSuccess" data-title="Перезагрузить">
                 <img
                         src="i/icon-tarif4.png"></button>
         </div>
@@ -962,8 +963,65 @@
 </div>
 </div>
 </div>
+
+<div class="popup_form" id="remove_form" style="display:none">
+  <form class="sendMailForm" action="contact.php" method="POST">
+    <div class="form_inner">
+      <div class="form_title">Удаление <br> виртуальной машины</div>
+      <div class="form_text">Вы точно хотите удалить машину <br>
+        «Название машины»?
+      </div>
+      <ul class="offer_control _line_mod">
+        <li class="text_center">
+          <button class="btn_v1 green_btn offer_btn"><span class="fw_b">Да</span></button>
+        </li>
+        <li class="text_center">
+          <a href="#" class="btn_v1 green_btn offer_btn closePopupBtn"><span class="fw_b">Нет</span></a>
+        </li>
+      </ul>
+      <div class="serverAnswer"></div>
+    </div>
+  </form>
 </div>
+<div class="popup_form" id="need_funds" style="display:none">
+  <form class="sendMailForm" action="contact.php" method="POST">
+    <input type="hidden" autofocus="autofocus"/>
+    <div class="form_inner">
+      <div class="form_title">Недостаточно средств</div>
+      <div class="form_text">К сожалению, у вас на счёте закончились
+        <br>
+        средства, но вы можете их пополнить!
+      </div>
+      <div class="form_cell _refill_cell"><input class="f_input input_v3 text_center" required="required"
+                                                 placeholder="Введите сумму" name="refill_sum"/></div>
+      <ul class="offer_control">
+        <li class="text_center">
+          <button class="btn_v1 green_btn offer_btn"><span class="fw_b">Оплатить</span></button>
+        </li>
+      </ul>
+      <div class="serverAnswer"></div>
+    </div>
+  </form>
+</div>
+<div class="popup_msg" id="start_success" style="display:none">
+  <div class="msg_block msg_success">Ваша машина maсhine1
+    успешно запущена
+  </div>
+</div>
+<div class="popup_msg" id="restart_success" style="display:none">
+  <div class="msg_block msg_success">Ваша машина maсhine1
+    успешно перезапущена
+  </div>
+</div>
+<div class="popup_msg" id="stop_success" style="display:none">
+    <div class="msg_block msg_success">Ваша машина maсhine1
+      остановлена
+    </div>
+  </div>
+
 <script>
+    var $need_funds, $remove_form, $start_success, $restart_success, $stop_success;
+    
     var $acc = document.getElementById("accordion");
 
     var $elements = $acc.getElementsByClassName('tariffs-row');
@@ -974,6 +1032,12 @@
 
     for ($i = 0; $i < $accLinks.length; $i++) {
         $accLinks[$i].addEventListener('click', toggleItem, false);
+    }
+
+    function closeMsgTimer(popup) {
+      setTimeout(function () {
+        popup.dialog('close');
+      }, 2000);
     }
 
     function toggleItem() {
@@ -1002,6 +1066,168 @@
             "scrollx": $('.external-scroll_x'),
             "scrolly": $('.external-scroll_y')
         });
+
+      if ($("#need_funds").length) {
+
+        $need_funds = $("#need_funds").dialog({
+          autoOpen: false,
+          modal: true,
+          closeOnEscape: true,
+          closeText: '',
+          show: "fade",
+          position: {my: "center center", at: "center center", of: window},
+          draggable: true,
+          dialogClass: 'dialog_global dialog_g_size_1 dialog_close_butt_mod_1 title_center_mod dialog_butt_v1',
+          width: 545,
+          open: function (event, ui) {
+            $body.addClass('dialog_regular_open');
+          },
+          close: function (event, ui) {
+            $body.removeClass('dialog_regular_open');
+          }
+        });
+
+
+        $('.startBtn').on('click', function () {
+          $need_funds.dialog('open');
+
+          return false;
+        });
+      }
+
+      if ($("#remove_form").length) {
+
+        $remove_form = $("#remove_form").dialog({
+          autoOpen: false,
+          modal: true,
+          closeOnEscape: true,
+          closeText: '',
+          show: "fade",
+          position: {my: "center center", at: "center center", of: window},
+          draggable: true,
+          dialogClass: 'dialog_global dialog_g_size_1 dialog_close_butt_mod_1 title_center_mod dialog_butt_v1',
+          width: 545,
+          open: function (event, ui) {
+            $body.addClass('dialog_regular_open');
+          },
+          close: function (event, ui) {
+            $body.removeClass('dialog_regular_open');
+          }
+        });
+
+
+        $('.removeBtn').on('click', function () {
+          $remove_form.dialog('open');
+
+          return false;
+        });
+      }
+
+      if ($("#start_success").length) {
+
+        $start_success = $("#start_success").dialog({
+          autoOpen: false,
+          modal: false,
+          closeOnEscape: true,
+          closeText: '',
+          show: "fade",
+          position: {my: "center center", at: "center center", of: window},
+          draggable: false,
+          dialogClass: 'dialog_global_v2 no_title_mod dialog_g_size_1 dialog_close_butt_mod_2 dialog_butt_v1',
+          width: 305,
+          open: function (event, ui) {
+            $body.addClass('dialog_regular_open');
+          },
+          close: function (event, ui) {
+            $body.removeClass('dialog_regular_open');
+          }
+        });
+
+
+        $('.startSuccess').on('click', function () {
+          var target = $(this).closest('.grup-button').prevAll('.machines').first();
+
+          $start_success.dialog("option", "position", {
+            my: "left bottom",
+            at: 'left bottom',
+            of: target
+          }).dialog('open');
+
+          closeMsgTimer($start_success);
+
+          return false;
+        });
+      }
+
+      if ($("#restart_success").length) {
+
+        $restart_success = $("#restart_success").dialog({
+          autoOpen: false,
+          modal: false,
+          closeOnEscape: true,
+          closeText: '',
+          show: "fade",
+          position: {my: "center center", at: "center center", of: window},
+          draggable: false,
+          dialogClass: 'dialog_global_v2 no_title_mod dialog_g_size_1 dialog_close_butt_mod_2 dialog_butt_v1',
+          width: 305,
+          open: function (event, ui) {
+            $body.addClass('dialog_regular_open');
+          },
+          close: function (event, ui) {
+            $body.removeClass('dialog_regular_open');
+          }
+        });
+
+        $('.restartSuccess').on('click', function () {
+          var target = $(this).closest('.grup-button').prevAll('.machines').first();
+
+          $restart_success.dialog("option", "position", {
+            my: "left bottom",
+            at: 'left bottom',
+            of: target
+          }).dialog('open');
+
+          closeMsgTimer($restart_success);
+
+          return false;
+        });
+      }
+
+      if ($("#stop_success").length) {
+
+        $stop_success = $("#stop_success").dialog({
+          autoOpen: false,
+          modal: false,
+          closeOnEscape: true,
+          closeText: '',
+          show: "fade",
+          position: {my: "center center", at: "center center", of: window},
+          draggable: false,
+          dialogClass: 'dialog_global_v2 no_title_mod dialog_g_size_1 dialog_close_butt_mod_2 dialog_butt_v1',
+          width: 305,
+          open: function (event, ui) {
+            $body.addClass('dialog_regular_open');
+          },
+          close: function (event, ui) {
+            $body.removeClass('dialog_regular_open');
+          }
+        });
+
+        $('.stopSuccess').on('click', function () {
+          var target = $(this).closest('.grup-button').prevAll('.machines').first();
+
+          $stop_success.dialog("option", "position", {
+            my: "left bottom",
+            at: 'left bottom',
+            of: target
+          }).dialog('open');
+
+          closeMsgTimer($stop_success);
+
+          return false;
+        });
+      }
     });
 
 </script>
