@@ -1,5 +1,5 @@
 <?php
-$from_to = "o.naidenov@hyperlee.com";
+$from_to = "o.naidenov@hyperlee.com,nadezdamarkina@yandex.ru";
 $post = (!empty($_POST)) ? true : false;
 if ($post) {
 

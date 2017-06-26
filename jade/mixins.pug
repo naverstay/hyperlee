@@ -62,7 +62,7 @@ mixin header(active)
                         span.link_icon
                             img(src='i/coach_icon.png')
                         span.link_text.hype_coach hypeCoach
-                li.menu_item(class= active == 3 ? '_active' : '')
+                //-li.menu_item(class= active == 3 ? '_active' : '')
                     a.menu_link(href='tariffs.html')
                         span.link_text Тарифы
                 li.menu_item(class= active == 4 ? '_active' : '')
@@ -223,7 +223,7 @@ mixin comparason(val)
 mixin study(callback)
     .section_inner
         ul#study_tabs.link_list.text_center
-            li(data-clone='1'): a.menu_link(href='#study_tab_1')
+            //-li(data-clone='1'): a.menu_link(href='#study_tab_1')
                 span.link_text Тарифы
             li(data-clone='2'): a.menu_link(href='#study_tab_2')
                 span.link_text Сравнение карт
@@ -233,7 +233,7 @@ mixin study(callback)
                 span.link_text Для студентов
     
     .tabBlock(data-tab-context="#study_tabs")
-        #study_tab_1.tab_unit
+        //-#study_tab_1.tab_unit
             .section_inner
                 .offer_list_holder: ul.offer_list
                     li
